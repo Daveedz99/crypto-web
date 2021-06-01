@@ -10,7 +10,7 @@
     <i class="fab fa-2x fa-discord"></i>
     <i class="fab fa-2x p-mx-2 fa-facebook"></i>
     <i class="fab fa-2x fa-instagram"></i>
-    <i class="fab fa-2x fa-twitter"></i>
+    <i class="fab fa-2x p-ml-2 fa-twitter"></i>
     </div>
   <div class="business-mail">
     LA NOSTRA MAIL

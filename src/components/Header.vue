@@ -6,7 +6,6 @@
     <div class="p-col-4">
       <img class="img-responsive logo" src="../assets/imgs/logo.png" />
     </div>
-
     <div class="p-col-4 dx">
       <span class="p-input-icon-left">
         <i class="fas fa-search" />
@@ -27,11 +26,11 @@ export default {
   data() {
     return {
       query: {
-        search: null,
-      },
+        search: null
+      }
     };
   },
-  methods: {},
+  methods: {}
 };
 </script>
 <style lang="scss" scoped>
@@ -40,7 +39,7 @@ export default {
 }
 .search {
   width: 200px;
-  transition: 0.5s;
+  transition: 0.4s;
 }
 .search:focus {
   width: 250px;
