@@ -1,8 +1,11 @@
 <template>
-  <div>
-    <Header id="header" />
-    <Home id="home" />
+  <div id="header">
+    <Header />
   </div>
+  <div id="main">
+    <Home />
+  </div>
+  <div id="footer" class="p-mr-2 p-as-end">Copyright © 2021 DrillWallet</div>
 </template>
 
 <script>
@@ -13,32 +16,12 @@ export default {
   name: "App",
   components: {
     Header,
-    Home
-  }
+    Home,
+  },
 };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-#header {
-  position: fixed;
-  top: 0;
-  margin: 0;
-  padding: 0;
-}
-body {
-  margin: 0;
-  /* background: url("./assets/imgs/bg-home.jpg") no-repeat center center fixed; */
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+<style lang="scss">
+@import "assets/scss/app.scss";
+@import "assets/scss/style.scss";
 </style>
