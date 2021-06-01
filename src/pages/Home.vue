@@ -2,7 +2,7 @@
   <div class="container">
     <span class="slogan">
       <h1>
-      Buy and sell your music using cryptocurrencies!
+      Buy and sell your music using crypto!
       </h1>
     </span>
       <div class="token-address">
