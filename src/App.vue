@@ -5,7 +5,20 @@
   <div id="main">
     <Home />
   </div>
-  <div id="footer" class="p-mr-2 p-as-end">Copyright © 2021 DrillWallet</div>
+  <div id="footer" class="p-mr-2 p-as-end">
+    <div class="social p-d-flex">
+    <i class="fab fa-2x fa-discord"></i>
+    <i class="fab fa-2x p-mx-2 fa-facebook"></i>
+    <i class="fab fa-2x fa-instagram"></i>
+    <i class="fab fa-2x fa-twitter"></i>
+    </div>
+  <div class="business-mail">
+    LA NOSTRA MAIL
+  </div>
+  <div class="copyright">
+    Copyright © 2021 DrillWallet
+  </div>
+    </div>
 </template>
 
 <script>
