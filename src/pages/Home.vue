@@ -11,7 +11,7 @@
       </Card>
       <Card class="counters-card" :style="{ backgroundColor: '#26232c' }">
         <template #content>
-          <div>
+          <div class="counter">
             {{ counters.marketCap }}
           </div>
           <span> Drill Wallet holders </span>
@@ -19,7 +19,7 @@
       </Card>
       <Card class="counters-card" :style="{ backgroundColor: '#26232c' }">
         <template #content>
-          <div>
+          <div class="counter">
             {{ counters.pricePer }}
           </div>
           <span> Drill Wallet holders </span>
