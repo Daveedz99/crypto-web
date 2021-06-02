@@ -27,16 +27,15 @@
     <div class="developers">
       DEVS--SPACE
       <input v-model.number="number" type="number" step="20" />
-      {{ number }}
+      {{ animatedNumber }}
     </div>
   </div>
 </template>
-
 <script>
 import Counters from "../components/Counters.vue";
 import Roadmap from "../components/Roadmap.vue";
 import Slogan from "../components/Slogan.vue";
-import gsap from "gsap";
+import { gsap } from "gsap";
 export default {
   name: "Home",
   data() {
