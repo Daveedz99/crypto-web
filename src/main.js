@@ -1,7 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-
 //PRIME VUE IMPORTS
 import Button from 'primevue/button';
 import Card from 'primevue/card';

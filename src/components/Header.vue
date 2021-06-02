@@ -35,7 +35,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .logo {
-  width: 4vw;
+  width: 5vw;
 }
 .search {
   width: 200px;

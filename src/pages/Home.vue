@@ -26,6 +26,8 @@
     </div>
     <div class="developers">
       DEVS--SPACE
+      <input v-model.number="number" type="number" step="20" />
+      {{ number }}
     </div>
   </div>
 </template>
@@ -34,20 +36,33 @@
 import Counters from "../components/Counters.vue";
 import Roadmap from "../components/Roadmap.vue";
 import Slogan from "../components/Slogan.vue";
+import gsap from "gsap";
 export default {
   name: "Home",
   data() {
     return {
+      number: 0,
+      tweenedNumber: 0,
       token: {
-        address: "0x83testdf1a7c56e7test7d321312TEST52e0a2aad0e",
-      },
+        address: "0x83testdf1a7c56e7test7d321312TEST52e0a2aad0e"
+      }
     };
+  },
+  watch: {
+    number(newValue) {
+      gsap.to(this.$data, { duration: 0.5, tweenedNumber: newValue });
+    }
+  },
+  computed: {
+    animatedNumber() {
+      return this.tweenedNumber.toFixed(0);
+    }
   },
   components: {
     Counters,
     Roadmap,
-    Slogan,
-  },
+    Slogan
+  }
 };
 </script>
 <style lang="scss" scoped>
