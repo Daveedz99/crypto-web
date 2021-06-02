@@ -1,32 +1,31 @@
 <template>
   <h5>Customized</h5>
   <Timeline :value="events1" align="alternate" class="customized-timeline">
-    <template #marker="slotProps">
+    <template #marker="el">
       <span
         class="custom-marker p-shadow-2"
-        :style="{ backgroundColor: slotProps.item.color }"
+        :style="{ backgroundColor: el.item.color }"
       >
-        <i :class="slotProps.item.icon"></i>
+        <i :class="el.item.icon"></i>
       </span>
     </template>
-    <template #content="slotProps">
+    <template #content="el">
       <div class="card">
-        {{ slotProps.item.status }}
-        {{ slotProps.item.date }}
+        <h2 class="p-text-bold">
+          {{ el.item.status }}
+          {{ el.item.date }}
+        </h2>
+
         <img
-          v-if="slotProps.item.image"
-          :src="'demo/images/product/' + slotProps.item.image"
-          :alt="slotProps.item.name"
+          v-if="el.item.image"
+          :src="'demo/images/product/' + el.item.image"
+          :alt="el.item.name"
           width="200"
           class="p-shadow-2"
         />
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
-          sed consequuntur error repudiandae numquam deserunt quisquam repellat
-          libero asperiores earum nam nobis, culpa ratione quam perferendis
-          esse, cupiditate neque quas!
+          
         </p>
-        <Button label="Read more" class="p-button-text"></Button>
       </div>
     </template>
   </Timeline>
@@ -39,27 +38,27 @@ export default {
     return {
       events1: [
         {
-          status: "Ordered",
-          date: "15/10/2020 10:30",
-          icon: "fas fa-shopping-cart",
+          status: "Q4",
+          date: "",
+          icon: "fas fa-coins",
           color: "#9C27B0",
-          image: "game-controller.jpg",
+          image: "",
         },
         {
-          status: "Processing",
-          date: "15/10/2020 14:00",
+          status: "Q3",
+          date: "",
           icon: "fas fa-cog",
           color: "#673AB7",
         },
         {
-          status: "Shipped",
-          date: "15/10/2020 16:15",
-          icon: "fas fa-shopping-cart",
+          status: "Q2",
+          date: "Coming soon..",
+          icon: "fas fa-coins",
           color: "#FF9800",
         },
         {
-          status: "Delivered",
-          date: "16/10/2020 10:00",
+          status: "Q1",
+          date: "Coming soon..",
           icon: "fas fa-check",
           color: "#607D8B",
         },
@@ -85,10 +84,10 @@ export default {
   line-height: 1;
 }
 .card {
-  background: #ffffff;
-  color: #495057;
-  box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%),
-    0 1px 3px 0 rgb(0 0 0 / 12%);
+  background: transparent;
+  color: #ffffff;
+//   box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%),
+//     0 1px 3px 0 rgb(0 0 0 / 12%);
   border-radius: 3px;
 }
 @media screen and (max-width: 960px) {
