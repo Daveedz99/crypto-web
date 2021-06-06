@@ -38,6 +38,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .logo {
+  margin-top: 0.5rem;
   width: 5vw;
 }
 .search {
