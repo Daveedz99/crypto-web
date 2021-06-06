@@ -49,6 +49,9 @@ data(){
 .p-card {
   width: 20rem;
   margin-right: 2em;
+  @media only screen and (max-width: 600px) {
+    margin-right: 0;
+  }
   .p-card-body {
     padding: 0 !important;
   }

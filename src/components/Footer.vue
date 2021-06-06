@@ -10,10 +10,10 @@
         <i class="fab fa-2x p-ml-2 fa-twitter"></i>
       </div>
       <div class="business-mail">
-        cryptowallet@drillwallet.it
+        cryptowallet@MUSA.it
       </div>
       <div class="copyright">
-        Copyright © 2021 DrillWallet
+        Copyright © 2021 MUSA
       </div>
     </div>
   </div>

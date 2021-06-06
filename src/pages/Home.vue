@@ -1,11 +1,10 @@
 <template>
   <div class="container">
-    <span class="slogan">
+    <div class="slogan">
       <Slogan />
-    </span>
+    </div>
     <div class="token-address">
-      <h3>Token address:</h3>
-      <span class="token">{{ token.address }}</span>
+      <TokenAddress :token="token" />
     </div>
     <div class="counters">
       <Counters />
@@ -35,11 +34,13 @@
 import Counters from "../components/Counters.vue";
 import Roadmap from "../components/Roadmap.vue";
 import Slogan from "../components/Slogan.vue";
+import TokenAddress from "../components/TokenAddress.vue";
 import { gsap } from "gsap";
 export default {
   name: "Home",
   data() {
     return {
+      windowTop: null,
       number: 0,
       tweenedNumber: 0,
       token: {
@@ -55,14 +56,28 @@ export default {
   computed: {
     animatedNumber() {
       return this.tweenedNumber.toFixed(0);
-    }
+    },
   },
   components: {
     Counters,
     Roadmap,
-    Slogan
-  }
+    Slogan,
+    TokenAddress
+  },
+  methods: {
+     onScroll() {
+      //console.log(e);
+      this.windowTop = window.top.scrollY;
+    },
+  },
+   beforeUnmount() {
+    window.removeEventListener("scroll", this.onScroll);
+  },
+  mounted() {
+    window.addEventListener("scroll", this.onScroll);
+  },
 };
+
 </script>
 <style lang="scss" scoped>
 .myIframe {
@@ -72,12 +87,6 @@ export default {
 .token-address {
   margin: 1rem 1rem 1rem 1rem;
 }
-.token {
-  color: black;
-  padding: 0.4rem;
-  border-radius: 10px;
-  background-color: rgba(51, 48, 48, 0.582);
-}
 .counters {
   margin: 4rem 1rem 4rem 1rem;
 }
@@ -86,5 +95,11 @@ export default {
 }
 .container {
   padding: 5rem;
+  @media only screen and (max-width: 600px) {
+     padding: 2rem;
+  } 
+}
+.p-button{
+  z-index: 0;
 }
 </style>

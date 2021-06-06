@@ -1,13 +1,15 @@
 <template>
   <div class="p-grid p-d-flex p-ai-center">
-    <div class="p-col-4 sx">
-      <i class="fad fa-2x fa-bars p-ml-4"></i>
-    </div>
-    <div class="p-col-4">
+    <div class="p-col-6 p-offset-2 sx">
       <img class="img-responsive logo" src="../assets/imgs/logo.png" />
     </div>
-    <div class="p-col-4 dx">
-      <span class="p-input-icon-left">
+    <div class="p-col-4">
+      <div class="anchors p-d-flex p-jc-between">
+        <div class="anchor">Roadmap</div>
+        <div class="anchor">How to buy</div>
+        <div class="anchor">Our Project</div>
+      </div>
+      <!-- <span class="p-input-icon-left">
         <i class="fas fa-search" />
         <InputText
           type="text"
@@ -15,7 +17,7 @@
           placeholder="Search"
           class="search"
         />
-      </span>
+      </span> -->
     </div>
   </div>
 </template>
@@ -26,11 +28,12 @@ export default {
   data() {
     return {
       query: {
-        search: null
-      }
+        search: null,
+      },
     };
   },
-  methods: {}
+  computed: {},
+  methods: {},
 };
 </script>
 <style lang="scss" scoped>
@@ -43,5 +46,21 @@ export default {
 }
 .search:focus {
   width: 250px;
+}
+.anchor {
+  width: fit-content;
+  padding: 7px;
+  background-image: linear-gradient(#fff, #fff);
+  background-position: bottom left;
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  transition: background-size 0.7s,
+    /*animate the background-size*/ background-position 0s 1s; /*don't animate position and add a delay */
+}
+
+.anchor:hover {
+  cursor: pointer;
+  background-position: bottom right;
+  background-size: 100% 2px;
 }
 </style>
