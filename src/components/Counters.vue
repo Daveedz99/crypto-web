@@ -1,56 +1,59 @@
 <template>
   <div class="p-grid p-d-flex p-jc-center">
-      <Card class="counters-card" :style="{ backgroundColor: '#26232c' }">
-        <template #content>
-          <div class="counter">
-            <i class="fas fa-hand-holding-water"></i>
-            {{counters.holders }}
-          </div>
-          <span> Drill Wallet holders </span>
-        </template>
-      </Card>
-      <Card class="counters-card" :style="{ backgroundColor: '#26232c' }">
-        <template #content>
-          <div class="counter">
-             <i class="fas fa-shopping-cart"></i>
-            {{ counters.marketCap }}
-          </div>
-          <span> Drill Wallet Marketcap </span>
-        </template>
-      </Card>
-      <Card class="counters-card" :style="{ backgroundColor: '#26232c' }">
-        <template #content>
-          <div class="counter">
-            <i class="fas fa-coins"></i>
-            {{ counters.pricePer }}
-          </div>
-          <span>Drill Wallet price per coin </span>
-        </template>
-      </Card>
-    </div>
+    <Card class="counters-card" :style="{ backgroundColor: '#26232c' }">
+      <template #content>
+        <div class="counter">
+          <i class="fas fa-hand-holding-water"></i>
+          {{ counters.holders }}
+        </div>
+        <span> Drill Wallet holders </span>
+      </template>
+    </Card>
+    <Card class="counters-card" :style="{ backgroundColor: '#26232c' }">
+      <template #content>
+        <div class="counter">
+          <i class="fas fa-shopping-cart"></i>
+          {{ counters.marketCap }}
+        </div>
+        <span> Drill Wallet Marketcap </span>
+      </template>
+    </Card>
+    <Card class="counters-card" :style="{ backgroundColor: '#26232c' }">
+      <template #content>
+        <div class="counter">
+          <i class="fas fa-coins"></i>
+          {{ counters.pricePer }}
+        </div>
+        <span>Drill Wallet price per coin </span>
+      </template>
+    </Card>
+  </div>
 </template>
 
 <script>
 export default {
-name: 'Counters',
-data(){
-    return{
-         counters: {
+  name: "Counters",
+  data() {
+    return {
+      counters: {
         holders: 12,
         marketCap: 1231,
-        pricePer: 0.0012,
-      },
-    }
-}
-}
+        pricePer: 0.0012
+      }
+    };
+  }
+};
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .p-card {
   width: 20rem;
   margin-right: 2em;
   @media only screen and (max-width: 600px) {
     margin-right: 0;
+  }
+  @media only screen and (max-width: 1230px) {
+    margin-top: 1rem;
   }
   .p-card-body {
     padding: 0 !important;

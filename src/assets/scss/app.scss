@@ -58,22 +58,6 @@ body {
   z-index: 1;
 }
 #header {
-  position: fixed;
-  z-index: 100;
-  background: #42275a; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #d3d0d2,
-    #584f9e
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #d3d0d2,
-    #584f9e
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  color: #fefefe;
-  width: 100%;
-  padding: 10px;
   a {
     display: block;
     padding: 17px 17px;

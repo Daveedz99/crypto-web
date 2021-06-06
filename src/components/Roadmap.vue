@@ -23,9 +23,9 @@
           width="200"
           class="p-shadow-2"
         />
-        <p>
-          
-        </p>
+        <div class="message">
+          {{ el.item.msg }}
+        </div>
       </div>
     </template>
   </Timeline>
@@ -43,28 +43,32 @@ export default {
           icon: "fas fa-coins",
           color: "#9C27B0",
           image: "",
+          msg: ""
         },
         {
           status: "Q3",
           date: "",
           icon: "fas fa-cog",
           color: "#673AB7",
+          msg: ""
         },
         {
           status: "Q2",
           date: "Coming soon..",
           icon: "fas fa-coins",
           color: "#FF9800",
+          msg: ""
         },
         {
           status: "Q1",
           date: "Coming soon..",
           icon: "fas fa-check",
           color: "#607D8B",
-        },
-      ],
+          msg: ""
+        }
+      ]
     };
-  },
+  }
 };
 </script>
 
@@ -86,8 +90,8 @@ export default {
 .card {
   background: transparent;
   color: #ffffff;
-//   box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%),
-//     0 1px 3px 0 rgb(0 0 0 / 12%);
+  //   box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%),
+  //     0 1px 3px 0 rgb(0 0 0 / 12%);
   border-radius: 3px;
 }
 @media screen and (max-width: 960px) {
