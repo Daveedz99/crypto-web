@@ -10,7 +10,6 @@
       <Counters />
     </div>
     <div class="poocoin">
-      <Button icon="fas fa-poo" class="p-button-help" label="Poocoin.com" />
       <!-- <iframe
       src="https://poocoin.app/tokens/0x1e5f009d4f8ca44b5fcc4963dd301da82b4eed09"
       frameborder="0"
@@ -23,10 +22,13 @@
     <div class="roadmap">
       <Roadmap />
     </div>
+    <div class="howtobuy">
+      <HowToBuy />
+    </div>
     <div class="developers">
       DEVS--SPACE
-      <input v-model.number="number" type="number" step="20" />
-      {{ animatedNumber }}
+      <!-- <input v-model.number="number" type="number" step="20" />
+      {{ animatedNumber }} -->
     </div>
   </div>
 </template>
@@ -35,7 +37,8 @@ import Counters from "../components/Counters.vue";
 import Roadmap from "../components/Roadmap.vue";
 import Slogan from "../components/Slogan.vue";
 import TokenAddress from "../components/TokenAddress.vue";
-import { gsap } from "gsap";
+import HowToBuy from "../components/HowToBuy.vue";
+// import { gsap } from "gsap";
 export default {
   name: "Home",
   data() {
@@ -48,36 +51,36 @@ export default {
       }
     };
   },
-  watch: {
-    number(newValue) {
-      gsap.to(this.$data, { duration: 0.5, tweenedNumber: newValue });
-    }
-  },
-  computed: {
-    animatedNumber() {
-      return this.tweenedNumber.toFixed(0);
-    },
-  },
+  // // // // watch: {
+  // // // //   number(newValue) {
+  // // // //     gsap.to(this.$data, { duration: 0.5, tweenedNumber: newValue });
+  // // // //   }
+  // // // },
+  // // computed: {
+  // //   animatedNumber() {
+  // //     return this.tweenedNumber.toFixed(0);
+  // //   }
+  // },
   components: {
     Counters,
     Roadmap,
     Slogan,
-    TokenAddress
+    TokenAddress,
+    HowToBuy
   },
   methods: {
-     onScroll() {
+    onScroll() {
       //console.log(e);
       this.windowTop = window.top.scrollY;
-    },
+    }
   },
-   beforeUnmount() {
+  beforeUnmount() {
     window.removeEventListener("scroll", this.onScroll);
   },
   mounted() {
     window.addEventListener("scroll", this.onScroll);
-  },
+  }
 };
-
 </script>
 <style lang="scss" scoped>
 .myIframe {
@@ -96,10 +99,10 @@ export default {
 .container {
   padding: 5rem;
   @media only screen and (max-width: 600px) {
-     padding: 2rem;
-  } 
+    padding: 2rem;
+  }
 }
-.p-button{
+.p-button {
   z-index: 0;
 }
 </style>
