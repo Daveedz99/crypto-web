@@ -1,5 +1,5 @@
 <template>
-  <div class="p-grid p-d-flex p-jc-center">
+  <div class="p-grid p-d-flex p-jc-center p-jc-around">
     <Card class="counters-card" :style="{ backgroundColor: '#26232c' }">
       <template #content>
         <div class="counter">
@@ -47,14 +47,10 @@ export default {
 
 <style lang="scss" scoped>
 .p-card {
-  width: 20rem;
-  margin-right: 2em;
-  @media only screen and (max-width: 600px) {
-    margin-right: 0;
-  }
-  @media only screen and (max-width: 1230px) {
-    margin-top: 1rem;
-  }
+  width: 30rem;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
   .p-card-body {
     padding: 0 !important;
   }

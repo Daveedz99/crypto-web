@@ -1,34 +1,36 @@
 <template>
-  <h5>Customized</h5>
-  <Timeline :value="events1" align="alternate" class="customized-timeline">
-    <template #marker="el">
-      <span
-        class="custom-marker p-shadow-2"
-        :style="{ backgroundColor: el.item.color }"
-      >
-        <i :class="el.item.icon"></i>
-      </span>
-    </template>
-    <template #content="el">
-      <div class="card">
-        <h2 class="p-text-bold">
-          {{ el.item.status }}
-          {{ el.item.date }}
-        </h2>
+  <div id="roadmap">
+    <h5>Customized</h5>
+    <Timeline :value="events1" align="alternate" class="customized-timeline">
+      <template #marker="el">
+        <span
+          class="custom-marker p-shadow-2"
+          :style="{ backgroundColor: el.item.color }"
+        >
+          <i :class="el.item.icon"></i>
+        </span>
+      </template>
+      <template #content="el">
+        <div class="card">
+          <h2 class="p-text-bold">
+            {{ el.item.status }}
+            {{ el.item.date }}
+          </h2>
 
-        <img
-          v-if="el.item.image"
-          :src="'demo/images/product/' + el.item.image"
-          :alt="el.item.name"
-          width="200"
-          class="p-shadow-2"
-        />
-        <div class="message">
-          {{ el.item.msg }}
+          <img
+            v-if="el.item.image"
+            :src="'demo/images/product/' + el.item.image"
+            :alt="el.item.name"
+            width="200"
+            class="p-shadow-2"
+          />
+          <div class="message">
+            {{ el.item.msg }}
+          </div>
         </div>
-      </div>
-    </template>
-  </Timeline>
+      </template>
+    </Timeline>
+  </div>
 </template>
 
 <script>

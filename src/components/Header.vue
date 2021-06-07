@@ -1,13 +1,13 @@
 <template>
   <div class="p-grid p-d-flex p-ai-center navbar">
-    <div class="p-col-6 p-offset-2 sx">
+    <div class="p-col-4 p-offset-2 sx">
       <img class="img-responsive logo" src="../assets/imgs/logo.png" />
     </div>
-    <div class="p-col-4">
-      <div class="anchors  p-d-none p-d-md-flex p-jc-between">
-        <div class="anchor">ROADMAP</div>
-        <div class="anchor">HOW TO BUY</div>
-        <div class="anchor">OUR PROJECT</div>
+    <div class="p-col-6">
+      <div class="anchors p-d-none p-d-md-flex p-jc-between">
+        <div class="anchor" v-scroll-to="'#roadmap'">ROADMAP</div>
+        <div class="anchor" v-scroll-to="'#howtobuy'">HOW TO BUY</div>
+        <div class="anchor" v-scroll-to="'#our-project'">OUR PROJECT</div>
       </div>
       <!-- <span class="p-input-icon-left">
         <i class="fas fa-search" />

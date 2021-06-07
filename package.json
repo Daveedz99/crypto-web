@@ -17,6 +17,7 @@
     "sass-loader": "^10.2.0",
     "vue": "^3.0.0",
     "vue-cli": "^2.9.6",
+    "vue-scrollto": "^2.20.0",
     "vue3-clipboard": "^1.0.0"
   },
   "devDependencies": {

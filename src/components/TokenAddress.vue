@@ -1,5 +1,5 @@
 <template>
-  <div class="p-grid">
+  <div class="p-grid p-mt-5 animate__animated animate__zoomInDown">
     <div
       class="p-col-10 p-offset-1 p-lg-4 p-lg-offset-4 tokenbox p-ripple"
       v-ripple

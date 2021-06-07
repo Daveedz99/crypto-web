@@ -1,5 +1,4 @@
 <template>
-  <div class="p-mr-2 p-as-end">
     <div class="p-grid p-d-flex p-jc-between">
       <div class="social p-d-flex">
         <i class="fab fa-2x fa-discord"></i>
@@ -16,7 +15,6 @@
         Copyright © 2021 MUSA
       </div>
     </div>
-  </div>
 </template>
 <script>
 export default {

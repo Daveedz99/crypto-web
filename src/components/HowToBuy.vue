@@ -1,22 +1,26 @@
 <template>
-  <div>
-   
-      <section class="section" >
-        <div class="p-grid">
-          <div class="step">
-            1
-          </div>
-          <div class="p-col-6 p-d-flex p-ai-center p-jc-center sectionbox">
-            <h2>
-              Installa Metamask o Trust Wallet
-            </h2>
-          </div>
-          <div class="p-col-6 p-d-flex p-ai-center p-jc-center">
-            <img class="img-responsive" src="../assets/imgs/pt1.png" />
-          </div>
+  <div id="howtobuy">
+    <section class="section" data-aos="fade-up" data-aos-duration="2500">
+      <div class="p-grid">
+        <div class="step">
+          1
         </div>
-      </section>
-    <section class="section">
+        <div class="p-col-6 p-d-flex p-ai-center p-jc-center sectionbox">
+          <h2>
+            Installa Metamask o Trust Wallet
+          </h2>
+        </div>
+        <div class="p-col-6 p-d-flex p-ai-center p-jc-center">
+          <img
+            class="img-responsive"
+            src="../assets/imgs/pt1.png"
+            data-aos="fade-left"
+            data-aos-anchor-placement="center-center"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="section" data-aos="fade-left" data-aos-duration="2500">
       <div class="step">
         2
       </div>
@@ -32,7 +36,7 @@
         Acquista dei BNB
       </h2>
     </section>
-    <section class="section">
+    <section class="section" data-aos="fade-right" data-aos-duration="2500">
       <div class="step">
         4
       </div>
@@ -40,7 +44,7 @@
         Accedi a Pancakeswap.finance dal browser del tuo Wallet.
       </h2>
     </section>
-    <section class="section">
+    <section class="section" data-aos="fade-left" data-aos-duration="2500">
       <div class="p-grid">
         <div class="step">
           5
@@ -56,7 +60,7 @@
         </div>
       </div>
     </section>
-    <section class="section">
+    <section class="section" data-aos="fade-right" data-aos-duration="2500">
       <div class="p-grid">
         <div class="step">
           6
@@ -71,7 +75,7 @@
         </div>
       </div>
     </section>
-    <section class="section">
+    <section class="section" data-aos="fade-left" data-aos-duration="2500">
       <div class="p-grid">
         <div class="step">
           7
@@ -84,25 +88,27 @@
         </div>
       </div>
     </section>
-    <section class="section">
+    <section class="section" data-aos="fade-right" data-aos-duration="2500">
       <div class="step">
         8
       </div>
       <h2>Controlla che le monete siano state accreditate sul tuo Wallet</h2>
     </section>
-    <section class="section">
-      <div class="step">
-        <i class="fas fa-2x fa-check"></i>
-      </div>
-      <h2>
-        Guarda i tuoi guadagni direttamente su Poocoin
-      </h2>
-      <Button
-        icon="fas fa-poo"
-        class="p-button-help p-button-text p-my-2"
-        label="Poocoin.com"
-      />
+    <section class="section" data-aos="zoom-in" data-aos-duration="2500">
       <div class="p-grid">
+        <div class="step">
+          <i class="fas fa-2x fa-check"></i>
+        </div>
+        <div class="p-col-12 p-d-flex p-jc-center">
+          <h2 class="p-d-flex p-ai-center">
+            E' ora di guardare i tuoi guadagni direttamente su
+            <Button
+              icon="fas fa-poo"
+              class="p-button-help p-button-text text-success p-mx-2"
+              label="Poocoin.com"
+            />
+          </h2>
+        </div>
         <div class="p-col-12">
           <img src="../assets/imgs/pt3.png" />
         </div>
@@ -111,7 +117,10 @@
   </div>
 </template>
 <script>
-export default {};
+
+export default {
+ 
+};
 </script>
 <style lang="scss" scoped>
 .section {
@@ -121,10 +130,11 @@ export default {};
   background-color: transparentize($color: black, $amount: 0.7%);
   .step {
     font-size: 2.5rem;
-    color: #00000062;
+    background-color: #9b27b03d;
+    color: #ffffff3d;
     font-weight: bolder;
     position: absolute;
-    border: 2px solid #9b27b08a;
+    border: 2px solid #9b27b03d;
     width: 80px;
     border-radius: 3rem;
   }
@@ -134,5 +144,14 @@ export default {};
   img {
     width: 30vw;
   }
+}
+.before-enter {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 2s ease-out;
+}
+.enter {
+  opacity: 1;
+  transform: translateY(0px);
 }
 </style>

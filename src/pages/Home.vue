@@ -16,7 +16,7 @@
       class="myIframe"
     ></iframe> -->
     </div>
-    <div class="our-project">
+    <div id="our-project" class="our-project">
       <h3>OUR PROJECT</h3>
     </div>
     <div class="roadmap">
@@ -50,6 +50,11 @@ export default {
         address: "0x83testdf1a7c56e7test7d321312TEST52e0a2aad0e"
       }
     };
+  },
+  props: {
+    anchor: {
+      type: String
+    }
   },
   // // // // watch: {
   // // // //   number(newValue) {
@@ -88,6 +93,9 @@ export default {
   width: 60vw;
 }
 .token-address {
+  margin: 1rem 1rem 1rem 1rem;
+}
+.slogan {
   margin: 1rem 1rem 1rem 1rem;
 }
 .counters {
