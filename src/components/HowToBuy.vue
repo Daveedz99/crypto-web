@@ -1,5 +1,6 @@
 <template>
   <div id="howtobuy">
+    
     <section class="section" data-aos="fade-up" data-aos-duration="2500">
       <div class="p-grid">
         <div class="step">
