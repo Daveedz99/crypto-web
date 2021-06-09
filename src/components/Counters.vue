@@ -1,6 +1,6 @@
 <template>
-  <div class="p-grid p-d-flex p-jc-center p-jc-around">
-    <Card class="counters-card" :style="{ backgroundColor: '#26232c' }">
+  <div class="p-grid p-jc-center p-mx-0 p-my-0">
+    <Card class="counters-card p-col" :style="{ backgroundColor: '#26232c' }">
       <template #content>
         <div class="counter">
           <i class="fas fa-hand-holding-water"></i>
@@ -9,7 +9,7 @@
         <span> Drill Wallet holders </span>
       </template>
     </Card>
-    <Card class="counters-card" :style="{ backgroundColor: '#26232c' }">
+    <Card class="counters-card p-col p-mx-0 p-mx-md-3" :style="{ backgroundColor: '#26232c' }">
       <template #content>
         <div class="counter">
           <i class="fas fa-shopping-cart"></i>
@@ -18,7 +18,7 @@
         <span> Drill Wallet Marketcap </span>
       </template>
     </Card>
-    <Card class="counters-card" :style="{ backgroundColor: '#26232c' }">
+    <Card class="counters-card p-col" :style="{ backgroundColor: '#26232c' }">
       <template #content>
         <div class="counter">
           <i class="fas fa-coins"></i>
@@ -47,7 +47,6 @@ export default {
 
 <style lang="scss" scoped>
 .p-card {
-  width: 30rem;
   padding: 1rem;
   border-radius: 10px;
   margin-top: 1rem;

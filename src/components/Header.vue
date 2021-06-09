@@ -1,7 +1,8 @@
 <template>
   <div class="p-grid p-d-flex p-ai-center navbar">
     <div class="p-col-4 p-offset-2 sx">
-      <img class="img-responsive logo" src="../assets/imgs/logo.png" />
+      <img class="img-responsive logo" src="https://fakeimg.pl/70x70/?LOGO&font=lobster">
+      <!-- <img class="img-responsive logo" src="../assets/imgs/logo.png" /> -->
     </div>
     <div class="p-col-6">
       <div class="anchors p-d-none p-d-md-flex p-jc-between">
@@ -33,8 +34,18 @@ export default {
     };
   },
   computed: {},
-  methods: {}
-};
+  methods: {
+      // handleScroll (event) {
+      //  console.log(event);
+      // }
+  },
+   created () {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  unmounted () {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+}
 </script>
 <style lang="scss" scoped>
 .logo {
@@ -50,7 +61,9 @@ export default {
 }
 .navbar {
   z-index: 100;
-  position: fixed;
+  position: sticky;
+  margin: 0;
+  position: -webkit-sticky;
   width: 100%;
   background: #42275a; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -76,11 +89,10 @@ export default {
   background-repeat: no-repeat;
   transition: background-size 0.7s, background-position 0s 1s;
   &:hover {
-  cursor: pointer;
-  background-position: bottom right;
-  color: #9C27B0;
-  background-size: 100% 2px;
+    cursor: pointer;
+    background-position: bottom right;
+    color: #9c27b0;
+    background-size: 100% 2px;
+  }
 }
-}
-
 </style>

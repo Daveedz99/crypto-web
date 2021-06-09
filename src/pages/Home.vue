@@ -17,7 +17,7 @@
     ></iframe> -->
     </div>
     <div id="our-project" class="our-project">
-      <h3>OUR PROJECT</h3>
+      <h3 class="p-my-0">OUR PROJECT</h3>
     </div>
     <div class="roadmap">
       <Roadmap />
@@ -47,14 +47,14 @@ export default {
       number: 0,
       tweenedNumber: 0,
       token: {
-        address: "0x83testdf1a7c56e7test7d321312TEST52e0a2aad0e"
-      }
+        address: "0x83testdf1a7c56e7test7d321312TEST52e0a2aad0e",
+      },
     };
   },
   props: {
     anchor: {
-      type: String
-    }
+      type: String,
+    },
   },
   // // // // watch: {
   // // // //   number(newValue) {
@@ -71,20 +71,20 @@ export default {
     Roadmap,
     Slogan,
     TokenAddress,
-    HowToBuy
+    HowToBuy,
   },
   methods: {
     onScroll() {
       //console.log(e);
       this.windowTop = window.top.scrollY;
-    }
+    },
   },
   beforeUnmount() {
     window.removeEventListener("scroll", this.onScroll);
   },
   mounted() {
     window.addEventListener("scroll", this.onScroll);
-  }
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -93,22 +93,38 @@ export default {
   width: 60vw;
 }
 .token-address {
-  margin: 1rem 1rem 1rem 1rem;
+  background: linear-gradient(to right, #aaaaaab9, #2b2b2bb9);
 }
 .slogan {
-  margin: 1rem 1rem 1rem 1rem;
+  background-color: rgba(0, 0, 0, 0.699);
+  // margin: 1rem 1rem 1rem 1rem;
 }
 .counters {
-  margin: 4rem 1rem 4rem 1rem;
+  background: linear-gradient(to right, #aaaaaab9, #2b2b2bb9);
+  padding: 4rem 1rem 4rem 1rem;
 }
-.poocoin {
-  margin: 1rem 1rem 1rem 1rem;
+.our-project {
+  padding: 2rem 0rem 2rem 0rem;
+  background-color: rgba(0, 0, 0, 0.699);
+}
+.roadmap {
+  background-color: rgba(204, 0, 245, 0.699);
+}
+.howtobuy {
+  background-color: rgba(126, 91, 255, 0.699);
+}
+.developers {
+  padding: 3rem 1rem 3rem 1rem;
+  background-color: rgba(91, 203, 255, 0.699);
+
+  // margin: 1rem 1rem 1rem 1rem;
 }
 .container {
-  padding: 5rem;
-  @media only screen and (max-width: 600px) {
-    padding: 2rem;
-  }
+  overflow-x: hidden;
+  // padding: 5rem;
+  // @media only screen and (max-width: 600px) {
+  //   padding: 2rem;
+  // }
 }
 .p-button {
   z-index: 0;
