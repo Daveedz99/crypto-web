@@ -1,5 +1,5 @@
 <template>
-  <div class="p-grid p-mt-5 animate__animated animate__zoomInDown">
+  <div class="p-grid p-mt-0 p-py-5 animate__animated animate__zoomInDown">
     <div
       class="p-col-10 p-offset-1 p-lg-4 p-lg-offset-4 tokenbox p-ripple"
       v-ripple
@@ -26,26 +26,26 @@ export default {
   name: "TokenAddress",
   data() {
     return {
-      cloned: false
+      cloned: false,
     };
   },
   props: {
     token: {
-      type: Object
-    }
+      type: Object,
+    },
   },
   watch: {
     cloned() {
       setTimeout(() => {
         this.cloned = false;
       }, 500);
-    }
+    },
   },
   methods: {
     doCopyToken() {
       this.cloned = true;
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss">
@@ -54,7 +54,7 @@ export default {
   padding: 0.4rem;
   border-radius: 10px;
   word-wrap: break-word;
-  background-color: rgba(51, 48, 48, 0.411);
+  background-color: #9b27b070;
   &:hover {
     cursor: pointer;
   }
