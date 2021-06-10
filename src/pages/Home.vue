@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="section3 slogan">
+    <div class="slogan">
       <Slogan />
     </div>
     <div class="token-address">
@@ -8,6 +8,9 @@
     </div>
     <div class="section counters">
       <Counters />
+    </div>
+    <div class="social">
+      <Social />
     </div>
     <div class="poocoin">
       <!-- <iframe
@@ -19,7 +22,7 @@
     <div id="our-project" class="section our-project">
       <h3 class="p-my-0">OUR PROJECT</h3>
     </div>
-    <div class="section roadmap">
+    <div class="section3 roadmap">
       <Roadmap />
     </div>
     <div class="section howtobuy">
@@ -34,7 +37,8 @@ import Roadmap from "../components/Roadmap.vue";
 import Slogan from "../components/Slogan.vue";
 import TokenAddress from "../components/TokenAddress.vue";
 import HowToBuy from "../components/HowToBuy.vue";
-//import simpleParallax from "simple-parallax-js";
+import Social from "../components/Social.vue"
+// import simpleParallax from "simple-parallax-js";
 
 export default {
   name: "Home",
@@ -59,25 +63,27 @@ export default {
     Slogan,
     TokenAddress,
     HowToBuy,
+    Social
   },
   methods: {
     //PARALLAX EFFECT DA RIVEDERE for each section
-    // handleScroll() {
-    //   let el = document.getElementsByClassName("section3");
-    //   new simpleParallax(el, {
-    //     orientation: "right",
-    //     overflow: true,
-    //     scale: 1.5,
-    //     transition: "cubic-bezier(0,0,0,1)",
-    //   });
-    // },
-  },
-  // beforeUnmount() {
-  //   window.removeEventListener("scroll", this.handleScroll);
+  //    handleScroll() {
+  //     let el = document.getElementsByClassName("section3");
+  //      new simpleParallax(el, {
+  //        orientation: "right",
+  //        overflow: true,
+  //        scale: 1.5,
+  //        transition: "cubic-bezier(0,0,0,1)",
+  //      });
+  //   },
   // },
-  // mounted() {
-  //   window.addEventListener("scroll", this.handleScroll);
-  // },
+  //  beforeUnmount() {
+  //    window.removeEventListener("scroll", this.handleScroll);
+  //  },
+  //  mounted() {
+  //    window.addEventListener("scroll", this.handleScroll);
+  //  },
+  }
 };
 </script>
 <style lang="scss" scoped>
