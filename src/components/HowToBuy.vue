@@ -1,7 +1,6 @@
 <template>
   <div id="howtobuy">
-    
-    <section class="section" data-aos="fade-up" data-aos-duration="2500">
+    <section class="section p-mt-0" data-aos="fade-up" data-aos-duration="2500">
       <div class="p-grid">
         <div class="step">
           1
@@ -29,7 +28,7 @@
         Configura il tuo Wallet
       </h2>
     </section>
-    <section class="section">
+    <section class="section" data-aos="fade-right" data-aos-duration="2500">
       <div class="step">
         3
       </div>
@@ -37,7 +36,7 @@
         Acquista dei BNB
       </h2>
     </section>
-    <section class="section" data-aos="fade-right" data-aos-duration="2500">
+    <section class="section" data-aos="fade-left" data-aos-duration="2500">
       <div class="step">
         4
       </div>
@@ -45,7 +44,7 @@
         Accedi a Pancakeswap.finance dal browser del tuo Wallet.
       </h2>
     </section>
-    <section class="section" data-aos="fade-left" data-aos-duration="2500">
+    <section class="section" data-aos="fade-right" data-aos-duration="2500">
       <div class="p-grid">
         <div class="step">
           5
@@ -61,7 +60,7 @@
         </div>
       </div>
     </section>
-    <section class="section" data-aos="fade-right" data-aos-duration="2500">
+    <section class="section" data-aos="fade-left" data-aos-duration="2500">
       <div class="p-grid">
         <div class="step">
           6
@@ -76,7 +75,7 @@
         </div>
       </div>
     </section>
-    <section class="section" data-aos="fade-left" data-aos-duration="2500">
+    <section class="section" data-aos="fade-right" data-aos-duration="2500">
       <div class="p-grid">
         <div class="step">
           7
@@ -89,7 +88,7 @@
         </div>
       </div>
     </section>
-    <section class="section" data-aos="fade-right" data-aos-duration="2500">
+    <section class="section" data-aos="fade-left" data-aos-duration="2500">
       <div class="step">
         8
       </div>
@@ -118,41 +117,41 @@
   </div>
 </template>
 <script>
-
-export default {
- 
-};
+export default {};
 </script>
 <style lang="scss" scoped>
-.section {
+#howtobuy {
   padding: 1rem;
-  margin: 1rem;
-  border-radius: 15px;
-  background-color: transparentize($color: black, $amount: 0.7%);
-  .step {
-    font-size: 2.5rem;
-    background-color: #9b27b03d;
-    color: #ffffff3d;
-    font-weight: bolder;
-    position: absolute;
-    border: 2px solid #9b27b03d;
-    width: 80px;
-    border-radius: 3rem;
+  .section {
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 15px;
+    background-color: transparentize($color: black, $amount: 0.7%);
+    .step {
+      font-size: 2.5rem;
+      background-color: #9b27b03d;
+      color: #ffffff3d;
+      font-weight: bolder;
+      position: absolute;
+      border: 2px solid #9b27b03d;
+      width: 80px;
+      border-radius: 3rem;
+    }
+    h2 {
+      color: white;
+    }
+    img {
+      width: 25vw;
+    }
   }
-  h2 {
-    color: white;
+  .before-enter {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 2s ease-out;
   }
-  img {
-    width: 30vw;
+  .enter {
+    opacity: 1;
+    transform: translateY(0px);
   }
-}
-.before-enter {
-  opacity: 0;
-  transform: translateY(100px);
-  transition: all 2s ease-out;
-}
-.enter {
-  opacity: 1;
-  transform: translateY(0px);
 }
 </style>

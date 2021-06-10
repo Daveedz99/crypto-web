@@ -1,7 +1,8 @@
 <template>
-  <div class="p-grid">
+  <div class="p-grid p-pt-3">
     <div class="p-col-12">
-      <h1>
+      <img src="https://fakeimg.pl/350x200/?text=MUSA&font=lobster" />
+      <h1 class="text-white">
         Buy and sell your music using crypto!
       </h1>
       <Button
@@ -23,7 +24,8 @@
 export default {
   data() {
     return {};
-  }
+  },
+  methods: {},
 };
 </script>
 
