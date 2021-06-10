@@ -48,11 +48,12 @@ export default {
   },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .tokenbox {
   color: black;
   padding: 0.4rem;
   border-radius: 10px;
+  border: 2px solid #65197298;
   word-wrap: break-word;
   background-color: #9b27b070;
   &:hover {

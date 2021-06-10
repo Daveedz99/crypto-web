@@ -141,7 +141,7 @@ export default {};
       color: white;
     }
     img {
-      width: 30vw;
+      width: 25vw;
     }
   }
   .before-enter {
