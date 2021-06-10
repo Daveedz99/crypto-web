@@ -1,5 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
+
+//OTHERS
 import VueClipboard from "vue3-clipboard";
 import VueScrollTo from "vue-scrollto";
 
@@ -36,7 +38,6 @@ const app = createApp(App)
   })
   .directive("ripple", Ripple)
   .directive("tooltip", Tooltip)
-
   .component("Menubar", Menubar)
   .component("InputText", InputText)
   .component("Card", Card)

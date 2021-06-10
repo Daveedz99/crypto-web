@@ -4,16 +4,41 @@
       <template #content>
         <div class="counter">
           <i class="fas fa-hand-holding-water"></i>
-          {{ counters.holders }}
+          <Autocounter
+            ref="counter"
+            :startAmount="0"
+            :endAmount="counters.holders"
+            :duration="3"
+            prefix=""
+            suffix=""
+            separator=""
+            decimalSeparator=""
+            :decimals="0"
+            :autoinit="true"
+          />
         </div>
         <span> Drill Wallet holders </span>
       </template>
     </Card>
-    <Card class="counters-card p-col p-mx-0 p-mx-md-3" :style="{ backgroundColor: '#26232c' }">
+    <Card
+      class="counters-card p-col p-mx-0 p-mx-md-3"
+      :style="{ backgroundColor: '#26232c' }"
+    >
       <template #content>
         <div class="counter">
           <i class="fas fa-shopping-cart"></i>
-          {{ counters.marketCap }}
+           <Autocounter
+            ref="counter"
+            :startAmount="0"
+            :endAmount="counters.marketCap"
+            :duration="3"
+            prefix=""
+            suffix=""
+            separator=""
+            decimalSeparator=""
+            :decimals="0"
+            :autoinit="true"
+          />
         </div>
         <span> Drill Wallet Marketcap </span>
       </template>
@@ -22,7 +47,18 @@
       <template #content>
         <div class="counter">
           <i class="fas fa-coins"></i>
-          {{ counters.pricePer }}
+           <Autocounter
+            ref="counter"
+            :startAmount="0"
+            :endAmount="counters.pricePer"
+            :duration="3"
+            prefix=""
+            suffix=""
+            separator=""
+            decimalSeparator=""
+            :decimals="4"
+            :autoinit="true"
+          />
         </div>
         <span>Drill Wallet price per coin </span>
       </template>
@@ -31,6 +67,8 @@
 </template>
 
 <script>
+import Vue3Autocounter from "vue3-autocounter";
+
 export default {
   name: "Counters",
   data() {
@@ -38,10 +76,13 @@ export default {
       counters: {
         holders: 12,
         marketCap: 1231,
-        pricePer: 0.0012
-      }
+        pricePer: 0.0012,
+      },
     };
-  }
+  },
+  components: {
+    Autocounter: Vue3Autocounter,
+  },
 };
 </script>
 
@@ -54,7 +95,7 @@ export default {
     padding: 0 !important;
   }
   .counter {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 }
 </style>

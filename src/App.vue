@@ -24,12 +24,12 @@ export default {
   components: {
     Header,
     Home,
-    Footer
+    Footer,
   },
   methods: {},
   created() {
     AOS.init();
-  }
+  },
 };
 </script>
 

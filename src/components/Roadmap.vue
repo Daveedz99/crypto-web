@@ -10,7 +10,7 @@
         </span>
       </template>
       <template #content="el">
-        <div class="card"  data-aos="fade-up" data-aos-duration="2500">
+        <div class="card" data-aos="fade-up" data-aos-duration="2500">
           <h2 class="p-text-bold">
             {{ el.item.status }}
             {{ el.item.date }}
@@ -21,7 +21,7 @@
             :src="el.item.image"
             :alt="el.item.name"
             width="200"
-            class="p-shadow-2"
+            class="myImg p-shadow-2"
           />
           <div class="message">
             {{ el.item.msg }}
@@ -76,6 +76,7 @@ export default {
       ],
     };
   },
+  methods: {},
 };
 </script>
 
@@ -101,7 +102,7 @@ export default {
   //     0 1px 3px 0 rgb(0 0 0 / 12%);
   border-radius: 3px;
 }
-.customized-timeline{
+.customized-timeline {
   padding: 1rem;
 }
 @media screen and (max-width: 960px) {
