@@ -14,7 +14,11 @@
           <div class="anchor" v-scroll-to="'#howtobuy'">HOW TO BUY</div>
           <div class="anchor" v-scroll-to="'#our-project'">OUR PROJECT</div>
         </div>
-        <div class="burger p-d-md-none" :class="{ active: isOpen }">
+
+        <BurgerMenu />
+      </div>
+
+      <!-- <div class="burger p-d-md-none" :class="{ active: isOpen }">
           <slot>
             <button
               type="button"
@@ -27,8 +31,8 @@
               <span class="burger-bar burger-bar--3"></span>
             </button>
           </slot>
-        </div>
-        <!-- <span class="p-input-icon-left">
+        </div> -->
+      <!-- <span class="p-input-icon-left">
           <i class="fas fa-search" />
           <InputText
             type="text"
@@ -37,12 +41,12 @@
             class="search"
           />
         </span> -->
-      </div>
     </div>
   </div>
 </template>
 
 <script>
+import BurgerMenu from "../integrations/BurgerMenu.vue";
 export default {
   name: "Header",
   data() {
@@ -50,6 +54,9 @@ export default {
       isOpen: false,
       colored: false,
     };
+  },
+  components: {
+    BurgerMenu,
   },
   watch: {
     // isOpen(val){

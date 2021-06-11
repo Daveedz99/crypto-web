@@ -1,5 +1,8 @@
 <template>
-  <div class="socialbox animate__animated animate__heartBeat animate__slow">
+  <div
+    class="socialbox animate__animated animate__heartBeat animate__slow"
+    :class="transaprentize ? 'transparentize' : ''"
+  >
     <div class="social-icon">
       <i class="fab fa-telegram-plane"></i>
     </div>
@@ -15,12 +18,33 @@
 export default {
   name: "Social",
   data() {
-    return {};
+    return {
+      transaprentize: false,
+    };
+  },
+  methods: {
+    handleScroll() {
+      if (window.scrollY >= 4000) {
+        this.transaprentize = true;
+      } else {
+        this.transaprentize = false;
+      }
+    },
+  },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  unmounted() {
+    window.removeEventListener("scroll", this.handleScroll);
   },
 };
 </script>
 <style lang="scss" scoped>
 @import "@/assets/scss/variables.scss";
+.transparentize {
+  opacity: 0;
+  //  transition: all 0.5s ease;
+}
 .socialbox {
   display: flex;
   flex-direction: column;
@@ -33,7 +57,9 @@ export default {
   position: fixed;
   background-color: rgba(70, 70, 70, 0.89);
   border-radius: 5px 0px 0px 5px;
-  transition: all 1.5s ease;
+  transition: padding 1.5s ease;
+  transition: background-color 1.5s ease;
+  transition: opacity 0.5s ease;
   &:hover {
     padding: 1.4rem;
     background-color: rgba(80, 80, 80, 0.774);
@@ -44,7 +70,6 @@ export default {
   @media only screen and (max-width: 600px) {
     font-size: 1.3rem;
   }
-  cursor: pointer;
   i.fa-telegram-plane {
     color: $i-telegram;
     transition: color 0.4s ease;
