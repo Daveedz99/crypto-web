@@ -22,28 +22,34 @@
       </div>
     </section>
     <section class="section" data-aos="fade-left" data-aos-duration="2500">
-      <div class="step">
-        2
+      <div class="p-grid">
+        <div class="step">
+          2
+        </div>
+        <h2>
+          Configura il tuo Wallet
+        </h2>
       </div>
-      <h2>
-        Configura il tuo Wallet
-      </h2>
     </section>
     <section class="section" data-aos="fade-right" data-aos-duration="2500">
-      <div class="step">
-        3
+      <div class="p-grid">
+        <div class="step">
+          3
+        </div>
+        <h2>
+          Acquista dei BNB
+        </h2>
       </div>
-      <h2>
-        Acquista dei BNB
-      </h2>
     </section>
     <section class="section" data-aos="fade-left" data-aos-duration="2500">
-      <div class="step">
-        4
+      <div class="p-grid">
+        <div class="step">
+          4
+        </div>
+        <h2>
+          Accedi a Pancakeswap.finance dal browser del tuo Wallet.
+        </h2>
       </div>
-      <h2>
-        Accedi a Pancakeswap.finance dal browser del tuo Wallet.
-      </h2>
     </section>
     <section class="section" data-aos="fade-right" data-aos-duration="2500">
       <div class="p-grid">
@@ -90,10 +96,12 @@
       </div>
     </section>
     <section class="section" data-aos="fade-left" data-aos-duration="2500">
-      <div class="step">
-        8
+      <div class="p-grid">
+        <div class="step">
+          8
+        </div>
+        <h2>Controlla che le monete siano state accreditate sul tuo Wallet</h2>
       </div>
-      <h2>Controlla che le monete siano state accreditate sul tuo Wallet</h2>
     </section>
     <section class="section" data-aos="zoom-in" data-aos-duration="2500">
       <div class="p-grid">
@@ -137,6 +145,10 @@ export default {};
       border: 2px solid #9b27b03d;
       width: 80px;
       border-radius: 3rem;
+      @media only screen and (max-width: 800px) {
+        font-size: 1rem;
+        width: 30px;
+      }
     }
     h2 {
       color: white;
