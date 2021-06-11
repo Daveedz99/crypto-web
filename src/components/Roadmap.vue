@@ -106,6 +106,9 @@ export default {
   padding: 1rem;
 }
 @media screen and (max-width: 960px) {
+  .p-timeline.p-component{
+    align-items: center;
+  }
   ::v-deep(.customized-timeline) {
     .p-timeline-event:nth-child(even) {
       flex-direction: row !important;

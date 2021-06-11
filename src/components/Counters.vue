@@ -1,9 +1,9 @@
 <template>
   <div class="p-grid p-jc-center p-mx-0 p-my-0">
-    <Card class="counters-card p-col" :style="{ backgroundColor: '#26232c' }">
+    <Card class="counters-card p-col-12 p-lg-3">
       <template #content>
         <div class="counter">
-          <i class="fas fa-hand-holding-water"></i>
+          <i class="fas fa-hand-holding-water p-mr-3"></i>
           <Autocounter
             ref="counter"
             :startAmount="0"
@@ -20,14 +20,11 @@
         <span> Drill Wallet holders </span>
       </template>
     </Card>
-    <Card
-      class="counters-card p-col p-mx-0 p-mx-md-3"
-      :style="{ backgroundColor: '#26232c' }"
-    >
+    <Card class="counters-card p-col-12 p-lg-3 p-mx-lg-3 p-my-4 p-my-lg-0">
       <template #content>
         <div class="counter">
-          <i class="fas fa-shopping-cart"></i>
-           <Autocounter
+          <i class="fas fa-shopping-cart p-mr-3"></i>
+          <Autocounter
             ref="counter"
             :startAmount="0"
             :endAmount="counters.marketCap"
@@ -43,11 +40,11 @@
         <span> Drill Wallet Marketcap </span>
       </template>
     </Card>
-    <Card class="counters-card p-col" :style="{ backgroundColor: '#26232c' }">
+    <Card class="counters-card p-col-12 p-lg-3">
       <template #content>
         <div class="counter">
-          <i class="fas fa-coins"></i>
-           <Autocounter
+          <i class="fas fa-coins p-mr-3"></i>
+          <Autocounter
             ref="counter"
             :startAmount="0"
             :endAmount="counters.pricePer"
@@ -87,10 +84,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.p-card {
+@import "@/assets/scss/variables.scss";
+.p-card.p-component {
+  background-color: $bg-transparent;
   padding: 1rem;
   border-radius: 10px;
-  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.781);
+  i.fa-coins {
+    color: $text-secondary;
+  }
+  i.fa-hand-holding-water {
+    color: #6868db;
+  }
+  i.fa-shopping-cart {
+    color: #628f48;
+  }
   .p-card-body {
     padding: 0 !important;
   }
