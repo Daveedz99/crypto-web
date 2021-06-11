@@ -15,6 +15,7 @@
             class="img-responsive"
             src="../assets/imgs/pt1.png"
             data-aos="fade-left"
+            data-aos-duration="1000"
             data-aos-anchor-placement="center-center"
           />
         </div>

@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
+@import "variables.scss";
+
 #app {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -26,18 +28,19 @@ body {
   line-height: 1.5;
   color: #555;
   background-color: #fff;
-  // background: #42275a; /* fallback for old browsers */
-  // background: -webkit-linear-gradient(
-  //   to right,
-  //   #d3d0d2,
-  //   #584f9e
-  // ); /* Chrome 10-25, Safari 5.1-6 */
-  // background: linear-gradient(to right, #d3d0d2, #584f9e);
 }
 #header,
 #footer {
   flex: none;
 }
+#header {
+  position: sticky;
+  position: -webkit-sticky;
+  background-color: rgb(77, 77, 77);
+  top: 0px;
+  z-index: 100;
+}
+
 #main {
   -webkit-overflow-scrolling: touch;
   flex: auto;
@@ -46,36 +49,10 @@ body {
 #footer {
   width: 100%;
   background: #42275a; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #d3d0d2,
-    #42275a
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #d3d0d2, #6960a8);
+  background: -webkit-linear-gradient(to right, $bg-primary, $bg-secondary); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, $bg-primary, $bg-secondary);
   color: #fefefe;
   text-align: center;
   padding: 6vh;
   z-index: 1;
-}
-#header {
-  a {
-    display: block;
-    padding: 17px 17px;
-    color: #fefefe;
-    text-decoration: none;
-  }
-  .p-0 {
-    padding: 0;
-  }
-  .link {
-    color: #fefefe;
-    font-weight: bold;
-    text-transform: capitalize;
-
-    &:hover {
-      cursor: pointer;
-      background-color: #2f8cd8;
-      color: #222;
-    }
-  }
 }

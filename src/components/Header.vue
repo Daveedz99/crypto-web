@@ -1,24 +1,43 @@
 <template>
-  <div class="p-grid p-d-flex p-ai-center navbar">
-    <div class="p-col-4 p-offset-2 sx">
-      <img class="img-responsive logo" src="https://fakeimg.pl/70x70/?LOGO&font=lobster">
-      <!-- <img class="img-responsive logo" src="../assets/imgs/logo.png" /> -->
-    </div>
-    <div class="p-col-6">
-      <div class="anchors p-d-none p-d-md-flex p-jc-between">
-        <div class="anchor" v-scroll-to="'#roadmap'">ROADMAP</div>
-        <div class="anchor" v-scroll-to="'#howtobuy'">HOW TO BUY</div>
-        <div class="anchor" v-scroll-to="'#our-project'">OUR PROJECT</div>
-      </div>
-      <!-- <span class="p-input-icon-left">
-        <i class="fas fa-search" />
-        <InputText
-          type="text"
-          v-model="query.search"
-          placeholder="Search"
-          class="search"
+  <div class="navbar" :class="colored ? 'colored' : ''">
+    <div class="p-grid p-d-flex p-ai-center p-m-0">
+      <div class="p-col-4 p-offset-2 sx">
+        <img
+          class="img-responsive logo"
+          src="https://fakeimg.pl/70x70/?LOGO&font=lobster"
         />
-      </span> -->
+        <!-- <img class="img-responsive logo" src="../assets/imgs/logo.png" />  -->
+      </div>
+      <div class="p-col-6">
+        <div class="anchors p-d-none p-d-md-flex p-jc-between">
+          <div class="anchor" v-scroll-to="'#roadmap'">ROADMAP</div>
+          <div class="anchor" v-scroll-to="'#howtobuy'">HOW TO BUY</div>
+          <div class="anchor" v-scroll-to="'#our-project'">OUR PROJECT</div>
+        </div>
+        <div class="burger p-d-md-none" :class="{ active: isOpen }">
+          <slot>
+            <button
+              type="button"
+              class="burger-button"
+              @click="isOpen = !isOpen"
+            >
+              <span class="hidden">Toggle menu</span>
+              <span class="burger-bar burger-bar--1"></span>
+              <span class="burger-bar burger-bar--2"></span>
+              <span class="burger-bar burger-bar--3"></span>
+            </button>
+          </slot>
+        </div>
+        <!-- <span class="p-input-icon-left">
+          <i class="fas fa-search" />
+          <InputText
+            type="text"
+            v-model="query.search"
+            placeholder="Search"
+            class="search"
+          />
+        </span> -->
+      </div>
     </div>
   </div>
 </template>
@@ -28,71 +47,138 @@ export default {
   name: "Header",
   data() {
     return {
-      query: {
-        search: null
-      }
+      isOpen: false,
+      colored: false,
     };
+  },
+  watch: {
+    // isOpen(val){
+    //   console.log(val);
+    // }
   },
   computed: {},
   methods: {
-      // handleScroll (event) {
-      //  console.log(event);
-      // }
+    handleScroll() {
+      if (window.scrollY >= 126) {
+        this.colored = true;
+      } else {
+        this.colored = false;
+      }
+    },
   },
-   created () {
-    window.addEventListener('scroll', this.handleScroll);
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
   },
-  unmounted () {
-    window.removeEventListener('scroll', this.handleScroll);
-  }
-}
+  unmounted() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+};
 </script>
 <style lang="scss" scoped>
-.logo {
-  margin-top: 0.5rem;
-  width: 5vw;
-}
-.search {
-  width: 200px;
-  transition: 0.4s;
-}
-.search:focus {
-  width: 250px;
-}
+@import "@/assets/scss/variables.scss";
 .navbar {
-  z-index: 100;
-  position: sticky;
   margin: 0;
-  position: -webkit-sticky;
-  width: 100%;
-  background: #42275a; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #d3d0d2,
-    #584f9e
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #d3d0d2,
-    #584f9e
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  color: #fefefe;
+  color: whitesmoke;
+  transition: 0.4s all ease-in-out;
+  .logo {
+    margin-top: 0.5rem;
+    width: 5vw;
+    @media only screen and (max-width: 600px) {
+      width: 10vw;
+    }
+  }
+  .anchor {
+    width: fit-content;
+    font-weight: bold;
+    padding: 7px;
+    background-image: linear-gradient(#6024a5, #584f9e);
+    background-position: bottom left;
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    transition: background-size 0.7s, background-position 0s 1s;
+    &:hover {
+      cursor: pointer;
+      background-position: bottom right;
+      color: #9500af;
+      background-size: 100% 2px;
+    }
+  }
 }
-
-.anchor {
-  width: fit-content;
-  font-weight: bold;
-  padding: 7px;
-  background-image: linear-gradient(#6024a5, #584f9e);
-  background-position: bottom left;
-  background-size: 0% 2px;
-  background-repeat: no-repeat;
-  transition: background-size 0.7s, background-position 0s 1s;
-  &:hover {
+.colored {
+  background: $bg-primary;
+}
+.burger {
+  .hidden {
+    visibility: hidden;
+  }
+  button {
     cursor: pointer;
-    background-position: bottom right;
-    color: #9c27b0;
-    background-size: 100% 2px;
+  }
+  button:focus {
+    outline: 0;
+  }
+  .burger-button {
+    position: relative;
+    width: 35px;
+    display: block;
+    z-index: 60;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    pointer-events: all;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .burger-bar {
+    background-color: #000;
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    left: 6px;
+    height: 2px;
+    width: auto;
+    margin-top: -1px;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1),
+      opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+      background-color 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .burger-bar--1 {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+
+  .burger-bar--2 {
+    transform-origin: 100% 50%;
+    transform: scaleX(0.8);
+  }
+
+  .burger-button:hover .burger-bar--2 {
+    transform: scaleX(1);
+  }
+
+  .no-touchevents .burger-bar--2:hover {
+    transform: scaleX(1);
+  }
+
+  .burger-bar--3 {
+    transform: translateY(6px);
+  }
+
+  &.active .burger-button {
+    transform: rotate(-180deg);
+  }
+
+  &.active .burger-bar--1 {
+    transform: rotate(45deg);
+  }
+
+  &.active .burger-bar--2 {
+    opacity: 0;
+  }
+
+  &.active .burger-bar--3 {
+    transform: rotate(-45deg);
   }
 }
 </style>
