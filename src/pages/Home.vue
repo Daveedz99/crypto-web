@@ -3,11 +3,9 @@
     <div class="slogan">
       <Slogan />
     </div>
-    <div class="token-address">
-      <TokenAddress :token="token" />
-    </div>
+
     <div class="section counters">
-      <Counters />
+      <Counters :token="token" />
     </div>
     <div class="social">
       <Social />
@@ -35,9 +33,8 @@
 import Counters from "../components/Counters.vue";
 import Roadmap from "../components/Roadmap.vue";
 import Slogan from "../components/Slogan.vue";
-import TokenAddress from "../components/TokenAddress.vue";
 import HowToBuy from "../components/HowToBuy.vue";
-import Social from "../components/Social.vue"
+import Social from "../components/Social.vue";
 // import simpleParallax from "simple-parallax-js";
 
 export default {
@@ -61,29 +58,28 @@ export default {
     Counters,
     Roadmap,
     Slogan,
-    TokenAddress,
     HowToBuy,
-    Social
+    Social,
   },
   methods: {
     //PARALLAX EFFECT DA RIVEDERE for each section
-  //    handleScroll() {
-  //     let el = document.getElementsByClassName("section3");
-  //      new simpleParallax(el, {
-  //        orientation: "right",
-  //        overflow: true,
-  //        scale: 1.5,
-  //        transition: "cubic-bezier(0,0,0,1)",
-  //      });
-  //   },
-  // },
-  //  beforeUnmount() {
-  //    window.removeEventListener("scroll", this.handleScroll);
-  //  },
-  //  mounted() {
-  //    window.addEventListener("scroll", this.handleScroll);
-  //  },
-  }
+    //    handleScroll() {
+    //     let el = document.getElementsByClassName("section3");
+    //      new simpleParallax(el, {
+    //        orientation: "right",
+    //        overflow: true,
+    //        scale: 1.5,
+    //        transition: "cubic-bezier(0,0,0,1)",
+    //      });
+    //   },
+    // },
+    //  beforeUnmount() {
+    //    window.removeEventListener("scroll", this.handleScroll);
+    //  },
+    //  mounted() {
+    //    window.addEventListener("scroll", this.handleScroll);
+    //  },
+  },
 };
 </script>
 <style lang="scss" scoped>

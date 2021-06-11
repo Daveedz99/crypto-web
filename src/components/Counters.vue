@@ -1,4 +1,5 @@
 <template>
+  <TokenAddress :token="token" />
   <div class="p-grid p-jc-center p-mx-0 p-my-0">
     <Card class="counters-card p-col-12 p-lg-3">
       <template #content>
@@ -65,6 +66,7 @@
 
 <script>
 import Vue3Autocounter from "vue3-autocounter";
+import TokenAddress from "./TokenAddress.vue";
 
 export default {
   name: "Counters",
@@ -77,8 +79,12 @@ export default {
       },
     };
   },
+  props: {
+    token: Object,
+  },
   components: {
     Autocounter: Vue3Autocounter,
+    TokenAddress,
   },
 };
 </script>
