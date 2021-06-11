@@ -18,7 +18,7 @@
             :autoinit="true"
           />
         </div>
-        <span> Drill Wallet holders </span>
+        <span> MUSA holders </span>
       </template>
     </Card>
     <Card class="counters-card p-col-12 p-lg-3 p-mx-lg-3 p-my-4 p-my-lg-0">
@@ -38,7 +38,7 @@
             :autoinit="true"
           />
         </div>
-        <span> Drill Wallet Marketcap </span>
+        <span> MUSA Marketcap </span>
       </template>
     </Card>
     <Card class="counters-card p-col-12 p-lg-3">
@@ -58,7 +58,7 @@
             :autoinit="true"
           />
         </div>
-        <span>Drill Wallet price per coin </span>
+        <span>MUSA price per coin </span>
       </template>
     </Card>
   </div>
