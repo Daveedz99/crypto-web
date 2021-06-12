@@ -1,23 +1,21 @@
 <template>
-  <div class="burger-container p-d-md-none">
-    <input id="toggle" type="checkbox" />
-    <label class="toggle-container" for="toggle">
-      <span class="button button-toggle"></span>
-    </label>
-
-    <nav class="nav">
-      <div class="anchors">
-        <a class="anchor nav-item" v-scroll-to="'#roadmap'"
-          ><i class="fas fa-road p-mr-2"></i>ROADMAP</a
-        >
-        <a class="anchor nav-item" v-scroll-to="'#howtobuy'"
-          ><i class="fas fa-money-bill-wave p-mr-2"></i>HOW TO BUY</a
-        >
-        <a class="anchor nav-item" v-scroll-to="'#our-project'"
-          ><i class="fas fa-file p-mr-2"></i>PROJECT</a
-        >
+  <div class="outer-menu p-d-md-none">
+    <input class="checkbox-toggle" type="checkbox" />
+    <div class="hamburger">
+      <div></div>
+    </div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            <li><a href="#" v-scroll-to="'#roadmap'">Roadmap</a></li>
+            <li><a href="#" v-scroll-to="'#howtobuy'">How to buy</a></li>
+            <li><a href="#" v-scroll-to="'#ourproject'">Our project</a></li>
+            <li><a href="#" v-scroll-to="'#developers'">Chi siamo</a></li>
+          </ul>
+        </div>
       </div>
-    </nav>
+    </div>
   </div>
 </template>
 
@@ -25,215 +23,185 @@
 export default {
   name: "BurgerMenu",
   data() {
-    return {};
+    return {
+      opened: false,
+    };
   },
 };
 </script>
 
 <style lang="scss" scoped>
-$items: 4;
-$transition-duration: 0.5s;
-$transition-delay: 0.05s;
-
-a {
+@import "@/assets/scss/variables.scss";
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
   text-decoration: none;
-  font-weight: bolder;
 }
 
-/* Toggle functionality */
-.burger-container {
+.outer-menu {
+  position: absolute;
+  top: 0.5rem;
+  right: 5rem;
+}
+.outer-menu .checkbox-toggle {
   position: absolute;
   top: 0;
-  right: 0;
-}
-// To hide the checkbox
-#toggle {
-  position: absolute;
-  left: -100%;
-  top: -100%;
-}
-
-#toggle:focus {
-  & ~ .toggle-container .button-toggle {
-    box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1),
-      inset 0 0 0 20px rgba(0, 0, 0, 0.1);
-  }
-}
-
-// Styles for the 'open' state, if the checkbox is checked
-#toggle:checked {
-  // Any element you need to change the style if menu is open goes here, using the sibling selector (~) as follows
-
-  // Making the "X" icon using `:before` and `:after` pseudo-elements
-  & ~ .toggle-container .button-toggle {
-    box-shadow: 0 0 0 550px rgba(0, 0, 0, 0.1),
-      inset 0 0 0 20px rgba(0, 0, 0, 0.1);
-
-    &:hover {
-      box-shadow: 0 0 0 550px rgba(0, 0, 0, 0.1),
-        inset 0 0 0 20px rgba(0, 0, 0, 0.1), 0 0 0 8px rgba(0, 0, 0, 0.1),
-        inset 0 0 0 20px rgba(0, 0, 0, 0.1);
-    }
-
-    &:before {
-      transform: translateY(-50%) rotate(45deg) scale(1);
-    }
-
-    &:after {
-      transform: translateY(-50%) rotate(-45deg) scale(1);
-    }
-  }
-
-  &:focus ~ .toggle-container .button-toggle {
-    box-shadow: 0 0 0 550px rgba(0, 0, 0, 0.1),
-      inset 0 0 0 20px rgba(0, 0, 0, 0.1), 0 0 0 8px rgba(0, 0, 0, 0.1),
-      inset 0 0 0 20px rgba(0, 0, 0, 0.1);
-  }
-
-  // Open nav
-  & ~ .nav {
-    margin-bottom: 100px;
-    pointer-events: auto;
-    transform: translate(-50px, 50px);
-
-    // Restoring nav items from "lines" in the menu icon
-    .nav-item {
-      color: black;
-      letter-spacing: 0;
-      height: 40px;
-      line-height: 40px;
-      margin-top: 0;
-      opacity: 1;
-      transform: scaleY(1);
-      transition: $transition-duration, opacity 0.1s;
-
-      // Setting delays for the nav items in open transition
-      @for $i from 1 through $items {
-        &:nth-child(#{$i}) {
-          $delay: ($items - $i) * $transition-delay;
-          transition-delay: $delay;
-          &:before {
-            transition-delay: $delay;
-          }
-        }
-      }
-
-      // Hiding the lines
-      &:before {
-        opacity: 0;
-      }
-    }
-  }
-}
-
-/* Toggle button */
-
-.button-toggle {
-  position: absolute;
-  display: inline-block;
-  width: 37px;
-  height: 27px;
-  margin: 24px;
-  background-color: transparent;
-  border: none;
+  left: 0;
+  z-index: 2;
   cursor: pointer;
-  border-radius: 100%;
-  transition: $transition-duration + 0.1;
-
-  // Shadow on hover
-  &:hover {
-    box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1),
-      inset 0 0 0 20px rgba(0, 0, 0, 0.1);
-  }
-
-  // Making the "X" icon using `:before` and `:after` pseudo-elements
-  // Initially hidden because `scale(0)` transformation
-
-  &:before,
-  &:after {
-    position: absolute;
-    content: "";
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: black;
-    border-radius: 5px;
-    transition: $transition-duration;
-  }
-
-  &:before {
-    transform: translateY(-50%) rotate(45deg) scale(0);
-  }
-
-  &:after {
-    transform: translateY(-50%) rotate(-45deg) scale(0);
-  }
+  width: 60px;
+  height: 60px;
+  opacity: 0;
 }
-/* Menu */
-.nav {
-  display: inline-block;
-  margin: 25px 25px 20px;
-  // Don't want pointer-events as menu is closed
-  pointer-events: none;
-  transition: $transition-duration;
+.outer-menu .checkbox-toggle:checked + .hamburger > div {
+  transform: rotate(135deg);
 }
-
-// Showing nav items as lines, making up the hamburger menu icon
-.nav-item {
+.outer-menu .checkbox-toggle:checked + .hamburger > div:before,
+.outer-menu .checkbox-toggle:checked + .hamburger > div:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+.outer-menu .checkbox-toggle:checked + .hamburger > div:after {
+  opacity: 0;
+}
+.outer-menu .checkbox-toggle:checked ~ .menu {
+  pointer-events: auto;
+  visibility: visible;
+}
+.outer-menu .checkbox-toggle:checked ~ .menu > div {
+  transform: scale(1);
+  transition-duration: 0.75s;
+}
+.outer-menu .checkbox-toggle:checked ~ .menu > div > div {
+  opacity: 1;
+  transition: opacity 0.4s ease 0.4s;
+}
+.outer-menu .checkbox-toggle:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
+}
+.outer-menu .hamburger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  padding: 0.5em 1em;
+  border-radius: 0 0.12em 0.12em 0;
+  cursor: pointer;
+  transition: box-shadow 0.4s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.outer-menu .hamburger > div {
   position: relative;
-  display: inline-block;
-  float: left;
-  clear: both;
-  color: transparent;
-  font-size: 14px;
-  letter-spacing: -6.2px;
-  height: 7px;
-  line-height: 7px;
-  text-transform: uppercase;
-  white-space: nowrap;
-  transform: scaleY(0.2);
-  transition: $transition-duration, opacity 1s;
-
-  // Setting delays for the nav items in close transition
-  @for $i from 1 through $items {
-    &:nth-child(#{$i}) {
-      $delay: ($i - 1) * $transition-delay;
-      transition-delay: $delay;
-      &:before {
-        transition-delay: $delay;
-      }
-    }
-  }
-
-  // Adjusting width for the first line
-  &:nth-child(1) {
-    letter-spacing: -8px;
-  }
-
-  // Adjusting width for the second line
-  &:nth-child(2) {
-    letter-spacing: -7px;
-  }
-
-  // Adjusting from the fourth element onwards
-  &:nth-child(n + 4) {
-    letter-spacing: -8px;
-    margin-top: -7px;
-    opacity: 0;
-  }
-
-  // Getting the lines for the hamburger menu icon
-  &:before {
-    position: absolute;
-    content: "";
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #000000;
-    transform: translateY(-50%) scaleY(5);
-    transition: $transition-duration;
-  }
+  flex: none;
+  width: 100%;
+  height: 2px;
+  background: #fefefe;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.outer-menu .hamburger > div:before,
+.outer-menu .hamburger > div:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+  transition: all 0.4s ease;
+}
+.outer-menu .hamburger > div:after {
+  top: 10px;
+}
+.outer-menu .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  visibility: hidden;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  outline: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.outer-menu .menu > div {
+  width: 200vw;
+  height: 200vw;
+  color: #fefefe;
+  background: $bg-primary;
+  border-radius: 50%;
+  transition: all 0.4s ease;
+  flex: none;
+  transform: scale(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.outer-menu .menu > div > div {
+  text-align: center;
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  overflow-y: auto;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.outer-menu .menu > div > div > ul {
+  list-style: none;
+  padding: 0 1em;
+  margin: 0;
+  display: block;
+  max-height: 100vh;
+}
+.outer-menu .menu > div > div > ul > li {
+  padding: 0;
+  margin: 1em;
+  font-size: 24px;
+  display: block;
+}
+.outer-menu .menu > div > div > ul > li > a {
+  position: relative;
+  display: inline;
+  cursor: pointer;
+  transition: color 0.4s ease;
+}
+.outer-menu .menu > div > div > ul > li > a:hover {
+  color: #e5e5e5;
+}
+.outer-menu .menu > div > div > ul > li > a:hover:after {
+  width: 100%;
+}
+.outer-menu .menu > div > div > ul > li > a:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: -0.15em;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #e5e5e5;
+  transition: width 0.4s ease;
 }
 </style>
