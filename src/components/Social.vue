@@ -57,9 +57,10 @@ export default {
   position: fixed;
   background-color: rgba(70, 70, 70, 0.89);
   border-radius: 5px 0px 0px 5px;
-  transition: padding 1.5s ease;
-  transition: background-color 1.5s ease;
-  transition: opacity 0.5s ease;
+  // transition: padding 1.5s ease;
+  // transition: background-color 1.5s ease;
+  transition: all 1s ease;
+  // transition: opacity 0.5s ease;
   &:hover {
     padding: 1.4rem;
     background-color: rgba(80, 80, 80, 0.774);

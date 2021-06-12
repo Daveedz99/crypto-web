@@ -4,7 +4,7 @@
     <Card class="counters-card p-col-12 p-lg-3">
       <template #content>
         <div class="counter">
-          <i class="fas fa-hand-holding-water p-mr-3"></i>
+          <i class="fad fa-hand-holding-water p-mr-3"></i>
           <Autocounter
             ref="counter"
             :startAmount="0"
@@ -24,7 +24,7 @@
     <Card class="counters-card p-col-12 p-lg-3 p-mx-lg-3 p-my-4 p-my-lg-0">
       <template #content>
         <div class="counter">
-          <i class="fas fa-shopping-cart p-mr-3"></i>
+          <i class="fad fa-shopping-cart p-mr-3"></i>
           <Autocounter
             ref="counter"
             :startAmount="0"
@@ -44,7 +44,7 @@
     <Card class="counters-card p-col-12 p-lg-3">
       <template #content>
         <div class="counter">
-          <i class="fas fa-coins p-mr-3"></i>
+          <i class="fad fa-coins p-mr-3"></i>
           <Autocounter
             ref="counter"
             :startAmount="0"
