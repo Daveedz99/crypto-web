@@ -26,7 +26,10 @@
     <div class="section howtobuy">
       <HowToBuy />
     </div>
-    <div class="section developers">DEVS--SPACE</div>
+    <div class="section developers">
+      <Developers />
+    </div>
+    <ScrollTop icon="fad fa-chevron-up" :threshold="400" />
   </div>
 </template>
 <script>
@@ -35,6 +38,7 @@ import Roadmap from "../components/Roadmap.vue";
 import Slogan from "../components/Slogan.vue";
 import HowToBuy from "../components/HowToBuy.vue";
 import Social from "../components/Social.vue";
+import Developers from "../components/Developers.vue";
 // import simpleParallax from "simple-parallax-js";
 
 export default {
@@ -60,6 +64,7 @@ export default {
     Slogan,
     HowToBuy,
     Social,
+    Developers,
   },
   methods: {
     //PARALLAX EFFECT DA RIVEDERE for each section
@@ -126,5 +131,13 @@ export default {
 }
 .p-button {
   z-index: 0;
+}
+.p-scrolltop.p-link {
+  left: 1rem;
+  @media only screen and (max-width: 600px) {
+    max-width: 30px;
+    max-height: 30px;
+    opacity: 0.5;
+  }
 }
 </style>

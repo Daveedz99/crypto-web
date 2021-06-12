@@ -13,6 +13,7 @@ import InputText from "primevue/inputtext";
 import Menubar from "primevue/menubar";
 import PrimeVue from "primevue/config";
 import Ripple from "primevue/ripple";
+import ScrollTop from 'primevue/scrolltop';
 import Timeline from "primevue/timeline";
 import Tooltip from "primevue/tooltip";
 
@@ -40,6 +41,7 @@ const app = createApp(App)
   .directive("tooltip", Tooltip)
   .component("Menubar", Menubar)
   .component("InputText", InputText)
+  .component("ScrollTop", ScrollTop)
   .component("Card", Card)
   .component("Button", Button)
   .component("Timeline", Timeline)
