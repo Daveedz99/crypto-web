@@ -5,13 +5,19 @@
       <h1 class="text-white">
         Buy and sell your music using crypto!
       </h1>
-      <Button
-        icon="fas fa-wallet"
-        class="p-button-lg p-button-help "
-        label="Buy MUSA"
+      <ButtonSpecial
+        label="BUY MUSA"
+        icon="fad fa-wallet"
+        class="p-mx-4 p-ripple"
+        v-ripple
       />
 
-        <ButtonSpecial class="p-mx-4" />
+      <ButtonSpecial
+        label="Seguici su telegram"
+        icon="fab fa-telegram"
+        class="p-mx-4 p-ripple"
+        v-ripple
+      />
       <!-- <Button
         icon="fab fa-telegram"
         class="p-button-outlined p-button-lg p-ml-3 p-mt-2 p-mt-md-0 p-mt-lg-0 p-button-help"
@@ -22,13 +28,13 @@
 </template>
 
 <script>
-import ButtonSpecial from "../integrations/ButtonSpecial.vue"
+import ButtonSpecial from "../integrations/ButtonSpecial.vue";
 export default {
   data() {
     return {};
   },
-  components:{
-    ButtonSpecial
+  components: {
+    ButtonSpecial,
   },
   methods: {},
 };

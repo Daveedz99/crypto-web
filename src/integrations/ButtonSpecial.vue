@@ -1,6 +1,6 @@
 <template>
-  <a class="btn btn--svg js-animated-button" href="#project"
-    ><span class="btn--svg__label">Seguici su Telegram <i class="fab fa-telegram"></i></span>
+  <a class="btn btn--svg js-animated-button"
+    ><span class="btn--svg__label"><i :class="icon" class="p-mr-2"></i>{{ label }} </span>
     <svg
       class="btn--svg__circle"
       width="190"
@@ -48,22 +48,31 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {};
+  },
+  props: {
+    label: String,
+    icon: String,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 .btn {
+  cursor: pointer;
   font-size: 1em;
   line-height: 1em;
   letter-spacing: 0.04em;
   display: inline-block;
-    background-color: #9b27b070;
+  background-color: #9b27b070;
   &--svg {
     position: relative;
     height: 42px;
     width: 190px;
     overflow: hidden;
-    border-radius: 21px;
+    border-radius: 10px;
 
     &:hover {
       .btn--svg__circle {

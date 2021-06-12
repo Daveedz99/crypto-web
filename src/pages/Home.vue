@@ -132,11 +132,14 @@ export default {
 .p-button {
   z-index: 0;
 }
+.p-scrolltop {
+  z-index: 10 !important;
+}
 .p-scrolltop.p-link {
   left: 1rem;
   @media only screen and (max-width: 600px) {
-    max-width: 30px;
-    max-height: 30px;
+    max-width: 35px;
+    max-height: 35px;
     opacity: 0.5;
   }
 }
