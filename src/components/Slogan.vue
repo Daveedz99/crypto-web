@@ -5,6 +5,7 @@
       <h1 class="text-white">
         Buy and sell your music using crypto!
       </h1>
+      <Autotyper />
       <ButtonSpecial
         label="BUY MUSA"
         icon="fad fa-wallet"
@@ -29,12 +30,14 @@
 
 <script>
 import ButtonSpecial from "../integrations/ButtonSpecial.vue";
+import Autotyper from "../integrations/Autotyper.vue"
 export default {
   data() {
     return {};
   },
   components: {
     ButtonSpecial,
+    Autotyper
   },
   methods: {},
 };
