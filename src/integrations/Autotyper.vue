@@ -1,11 +1,11 @@
 <template>
-  <div class="container">
+
     <h1>
-      Coding is
-      <span class="typed-text">{{ typeValue }}</span>
-      <span class="cursor" :class="{ typing: typeStatus }">&nbsp;</span>
+      BUY
+      <span class="typed-text">{{ typer.value }}</span>
+      <span class="cursor" :class="{ typing: typer.status }">&nbsp;</span>
     </h1>
-  </div>
+
 </template>
 
 <script>
@@ -13,25 +13,33 @@ import { setTimeout } from "timers";
 export default {
   data: () => {
     return {
-      typeValue: "",
-      typeStatus: false,
-      typeArray: ["fun", "awesome", "a journey", "life"],
-      typingSpeed: 200,
-      erasingSpeed: 100,
-      newTextDelay: 2000,
+      typer: {
+        value: "",
+        status: false,
+        words: [
+          "AND SELL MUSA USING CRYPTO",
+          "FOR SEE THE FUTURE E-COMMERCE",
+          "PROJECTS",
+          "MUSA",
+        ],
+        speed: 200,
+        erasingSpeed: 100,
+        newTextDelay: 20,
+      },
+
       typeArrayIndex: 0,
       charIndex: 0,
     };
   },
   methods: {
     typeText() {
-      if (this.charIndex < this.typeArray[this.typeArrayIndex].length) {
-        if (!this.typeStatus) this.typeStatus = true;
-        this.typeValue += this.typeArray[this.typeArrayIndex].charAt(
+      if (this.charIndex < this.typer.words[this.typeArrayIndex].length) {
+        if (!this.typer.status) this.typer.status = true;
+        this.typer.value += this.typer.words[this.typeArrayIndex].charAt(
           this.charIndex
         );
         this.charIndex += 1;
-        setTimeout(this.typeText, this.typingSpeed);
+        setTimeout(this.typeText, this.typer.speed);
       } else {
         this.typeStatus = false;
         setTimeout(this.eraseText, this.newTextDelay);
@@ -39,8 +47,8 @@ export default {
     },
     eraseText() {
       if (this.charIndex > 0) {
-        if (!this.typeStatus) this.typeStatus = true;
-        this.typeValue = this.typeArray[this.typeArrayIndex].substring(
+        if (!this.typer.status) this.typer.status = true;
+        this.typer.value = this.typer.words[this.typeArrayIndex].substring(
           0,
           this.charIndex - 1
         );
@@ -49,30 +57,24 @@ export default {
       } else {
         this.typeStatus = false;
         this.typeArrayIndex += 1;
-        if (this.typeArrayIndex >= this.typeArray.length)
+        if (this.typeArrayIndex >= this.typer.words.length)
           this.typeArrayIndex = 0;
-        setTimeout(this.typeText, this.typingSpeed + 1000);
+        setTimeout(this.typeText, this.typer.speed + 1000);
       }
     },
   },
   created() {
-    setTimeout(this.typeText, this.newTextDelay + 200);
+    setTimeout(this.typeText, this.typer.newTextDelay + 200);
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.container {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 h1 {
+  color: #ffff;
   font-weight: normal;
   span.typed-text {
-    color: #d2b94b;
+    color: #8854b4;
   }
   span.cursor {
     display: inline-block;

@@ -1,12 +1,14 @@
 <template>
-  <div id="header">
-    <Header />
-  </div>
-  <div id="main">
-    <Home />
-  </div>
-  <div id="footer">
-    <Footer />
+  <div>
+    <div id="header">
+      <Header />
+    </div>
+    <div id="main">
+      <Home />
+    </div>
+    <div id="footer">
+      <Footer />
+    </div>
   </div>
 </template>
 

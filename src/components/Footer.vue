@@ -22,6 +22,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "@/assets/scss/variables.scss";
+
 .fa-facebook {
   color: #3b5998;
 }
