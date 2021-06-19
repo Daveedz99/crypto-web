@@ -1,17 +1,33 @@
 <template>
   <div class="outer-menu p-d-md-none">
-    <input class="checkbox-toggle" type="checkbox" />
+    <input class="checkbox-toggle" type="checkbox" @click="doOpenBurger()" />
     <div class="hamburger">
       <div></div>
     </div>
     <div class="menu">
-      <div>
+      <div class="visibility">
         <div>
           <ul>
-            <li><a href="#" v-scroll-to="'#roadmap'">Roadmap</a></li>
-            <li><a href="#" v-scroll-to="'#howtobuy'">How to buy</a></li>
-            <li><a href="#" v-scroll-to="'#ourproject'">Our project</a></li>
-            <li><a href="#" v-scroll-to="'#developers'">Chi siamo</a></li>
+            <li>
+              <a href="#" v-scroll-to="'#roadmap'" @click="doCloseBurger()"
+                >Roadmap</a
+              >
+            </li>
+            <li>
+              <a href="#" v-scroll-to="'#howtobuy'" @click="doCloseBurger()"
+                >How to buy</a
+              >
+            </li>
+            <li>
+              <a href="#" v-scroll-to="'#ourproject'" @click="doCloseBurger()"
+                >Our project</a
+              >
+            </li>
+            <li>
+              <a href="#" v-scroll-to="'#developers'" @click="doCloseBurger()"
+                >Chi siamo</a
+              >
+            </li>
           </ul>
         </div>
       </div>
@@ -27,11 +43,33 @@ export default {
       opened: false,
     };
   },
+  methods: {
+    doOpenBurger() {
+      this.opened = !this.opened;
+    },
+    doCloseBurger() {
+      this.opened = false;
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "@/assets/scss/variables.scss";
+
+// .a::before {
+//   .menu{
+//     visibility: visible;
+//   }
+// }
+// .a:active {
+//   .menu {
+//     div{
+
+//       visibility: hidden !important;
+//     }
+//   }
+// }
 a,
 a:visited,
 a:hover,
