@@ -15,7 +15,7 @@
             src="../assets/imgs/pt1.png"
             data-aos="fade-up"
             data-aos-duration="1500"
-            @click="toggleDialog('../assets/imgs/pt1.png')"
+            @click="toggleDialog('pt1.png', 'Installa App')"
           />
         </div>
       </div>
@@ -50,7 +50,7 @@
         <div class="p-col-6 p-d-flex p-ai-center p-jc-center">
           <img
             class="img-responsive"
-            @click="toggleDialog('../assets/imgs/pt2.png')"
+            @click="toggleDialog('pt2.png', 'Wallet')"
             src="../assets/imgs/pt2.png"
             data-aos="fade-up"
             data-aos-duration="1500"
@@ -73,7 +73,7 @@
         </div>
         <div class="p-col-6 p-d-flex p-ai-center p-jc-center">
           <img
-            @click="toggleDialog('../assets/imgs/slippage.png')"
+            @click="toggleDialog('slippage.png', 'Slippage')"
             class="img-responsive"
             src="../assets/imgs/slippage.png"
             data-aos="fade-up"
@@ -122,8 +122,8 @@
         </div>
         <div class="p-col-12">
           <img
-            @click="toggleDialog('../assets/imgs/pt3.png')"
-            src="../assets/imgs/pt3.png"
+            @click="toggleDialog('pt3.png', 'Poocoin')"
+            src="@/assets/imgs/pt3.png"
             data-aos="fade-up"
             data-aos-duration="1500"
           />
@@ -131,13 +131,17 @@
       </div>
     </section>
     <Dialog
-      header="Header"
-      :visible="dialog.show"
-      @update:visible="!dialog.show"
-      :breakpoints="{ '960px': '75vw', '640px': '100vw' }"
-      :style="{ width: 'auto' }"
+      :visible="dialog.show === 'open'"
+      :showHeader="false"
+      @update:visible="closeDialog()"
+      :breakpoints="{ '960px': '75vw', '640px': '95vw' }"
+      :style="{ width: '30vw' }"
+      :contentStyle="{backgroundColor: 'purple', }"
+      autoZIndex
+      modal
+      dismissableMask
     >
-      <img :src="dialog.img" />
+      <img class="dinamycImg" :src="imageUrl" />
     </Dialog>
   </div>
 </template>
@@ -147,14 +151,30 @@ export default {
     return {
       dialog: {
         show: false,
-        img: null,
+        img: "",
+        imgName: ''
       },
     };
   },
+  computed: {
+    imageUrl() {
+      return require("../assets/imgs/" + this.dialog.img);
+    },
+  },
   methods: {
-    toggleDialog(img) {
-      this.dialog.img = img;
-      this.dialog.show = !this.dialog.show;
+    closeDialog() {
+      this.dialog.show = "";
+      this.dialog.img = "";
+      this.dialog.imgName = "";
+    },
+    toggleDialog(url, imgName) {
+      if (this.dialog.img === url) {
+        return;
+      }
+      this.dialog.img += url;
+      this.dialog.imgName = imgName
+      console.log(url);
+      this.dialog.show = "open";
     },
   },
 };
@@ -213,5 +233,11 @@ export default {
     opacity: 1;
     transform: translateY(0px);
   }
+}
+.dinamycImg {
+  max-width: -webkit-fill-available;
+}
+.p-dialog .p-component{
+  border-radius: 2rem !important;
 }
 </style>

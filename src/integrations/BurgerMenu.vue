@@ -1,17 +1,33 @@
 <template>
   <div class="outer-menu p-d-md-none">
-    <input class="checkbox-toggle" type="checkbox" />
+    <input class="checkbox-toggle" type="checkbox" @click="doOpenBurger()" />
     <div class="hamburger">
       <div></div>
     </div>
     <div class="menu">
-      <div>
+      <div class="visibility">
         <div>
           <ul>
-            <li><a href="#" v-scroll-to="'#roadmap'">Roadmap</a></li>
-            <li><a href="#" v-scroll-to="'#howtobuy'">How to buy</a></li>
-            <li><a href="#" v-scroll-to="'#ourproject'">Our project</a></li>
-            <li><a href="#" v-scroll-to="'#developers'">Chi siamo</a></li>
+            <li>
+              <a href="#" v-scroll-to="'#roadmap'" @click="doCloseBurger()"
+                >Roadmap</a
+              >
+            </li>
+            <li>
+              <a href="#" v-scroll-to="'#howtobuy'" @click="doCloseBurger()"
+                >How to buy</a
+              >
+            </li>
+            <li>
+              <a href="#" v-scroll-to="'#ourproject'" @click="doCloseBurger()"
+                >Our project</a
+              >
+            </li>
+            <li>
+              <a href="#" v-scroll-to="'#developers'" @click="doCloseBurger()"
+                >Chi siamo</a
+              >
+            </li>
           </ul>
         </div>
       </div>
@@ -27,11 +43,33 @@ export default {
       opened: false,
     };
   },
+  methods: {
+    doOpenBurger() {
+      this.opened = !this.opened;
+    },
+    doCloseBurger() {
+      this.opened = false;
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "@/assets/scss/variables.scss";
+
+// .a::before {
+//   .menu{
+//     visibility: visible;
+//   }
+// }
+// .a:active {
+//   .menu {
+//     div{
+
+//       visibility: hidden !important;
+//     }
+//   }
+// }
 a,
 a:visited,
 a:hover,
@@ -42,7 +80,7 @@ a:active {
 
 .outer-menu {
   position: absolute;
-  top: 0.5rem;
+  top: 0.2rem;
   right: 5rem;
 }
 .outer-menu .checkbox-toggle {
@@ -51,8 +89,8 @@ a:active {
   left: 0;
   z-index: 2;
   cursor: pointer;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   opacity: 0;
 }
 .outer-menu .checkbox-toggle:checked + .hamburger > div {
@@ -86,9 +124,9 @@ a:active {
   top: 0;
   left: 0;
   z-index: 1;
-  width: 60px;
-  height: 60px;
-  padding: 0.5em 1em;
+  width: 54px;
+  height: 54px;
+  padding: 0.4em 0.6em;
   border-radius: 0 0.12em 0.12em 0;
   cursor: pointer;
   transition: box-shadow 0.4s ease;
