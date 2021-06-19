@@ -80,7 +80,7 @@ a:active {
 
 .outer-menu {
   position: absolute;
-  top: 0.5rem;
+  top: 0.2rem;
   right: 5rem;
 }
 .outer-menu .checkbox-toggle {
@@ -89,8 +89,8 @@ a:active {
   left: 0;
   z-index: 2;
   cursor: pointer;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   opacity: 0;
 }
 .outer-menu .checkbox-toggle:checked + .hamburger > div {
@@ -124,9 +124,9 @@ a:active {
   top: 0;
   left: 0;
   z-index: 1;
-  width: 60px;
-  height: 60px;
-  padding: 0.5em 1em;
+  width: 54px;
+  height: 54px;
+  padding: 0.4em 0.6em;
   border-radius: 0 0.12em 0.12em 0;
   cursor: pointer;
   transition: box-shadow 0.4s ease;
