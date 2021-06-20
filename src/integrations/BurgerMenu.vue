@@ -1,32 +1,38 @@
 <template>
   <div class="outer-menu p-d-md-none">
-    <input class="checkbox-toggle" type="checkbox" @click="doOpenBurger()" />
+    <input class="checkbox-toggle" type="checkbox" v-model="opened" />
     <div class="hamburger">
       <div></div>
     </div>
     <div class="menu">
-      <div class="visibility">
+      <div :class="!opened ? 'hidden' : ''">
         <div>
-          <ul>
-            <li>
-              <a href="#" v-scroll-to="'#roadmap'" @click="doCloseBurger()"
-                >Roadmap</a
-              >
+          <ul class="p-text-uppercase">
+            <li v-scroll-to="'#roadmap'" @click="doCloseBurger">
+              <a href="#">Roadmap</a>
+            </li>
+            <li v-scroll-to="'#howtobuy'" @click="doCloseBurger">
+              <a href="#">How to buy</a>
+            </li>
+            <li v-scroll-to="'#ourproject'" @click="doCloseBurger">
+              <a href="#">Our project</a>
+            </li>
+            <li v-scroll-to="'#developers'" @click="doCloseBurger">
+              <a href="#">Chi siamo</a>
             </li>
             <li>
-              <a href="#" v-scroll-to="'#howtobuy'" @click="doCloseBurger()"
-                >How to buy</a
-              >
-            </li>
-            <li>
-              <a href="#" v-scroll-to="'#ourproject'" @click="doCloseBurger()"
-                >Our project</a
-              >
-            </li>
-            <li>
-              <a href="#" v-scroll-to="'#developers'" @click="doCloseBurger()"
-                >Chi siamo</a
-              >
+              <div class="p-grid p-d-flex p-jc-between">
+                <div class="social p-d-flex">
+                  <i class="fab fa-telegram">
+                    <span class="whitespace"></span>
+                  </i>
+                  <i class="fab p-mx-2 fa-facebook"></i>
+                  <span class="insta">
+                    <i class="fab fa-instagram"></i>
+                  </span>
+                  <i class="fab p-ml-2 fa-twitter"></i>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
@@ -40,36 +46,20 @@ export default {
   name: "BurgerMenu",
   data() {
     return {
-      opened: false,
+      opened: false
     };
   },
   methods: {
-    doOpenBurger() {
-      this.opened = !this.opened;
-    },
     doCloseBurger() {
       this.opened = false;
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 @import "@/assets/scss/variables.scss";
 
-// .a::before {
-//   .menu{
-//     visibility: visible;
-//   }
-// }
-// .a:active {
-//   .menu {
-//     div{
-
-//       visibility: hidden !important;
-//     }
-//   }
-// }
 a,
 a:visited,
 a:hover,
@@ -77,11 +67,13 @@ a:active {
   color: inherit;
   text-decoration: none;
 }
-
+.hidden {
+  visibility: hidden;
+}
 .outer-menu {
   position: absolute;
-  top: 0.2rem;
-  right: 5rem;
+  top: 10%;
+  right: 15%;
 }
 .outer-menu .checkbox-toggle {
   position: absolute;
@@ -89,8 +81,8 @@ a:active {
   left: 0;
   z-index: 2;
   cursor: pointer;
-  width: 50px;
-  height: 50px;
+  width: 49px;
+  height: 49px;
   opacity: 0;
 }
 .outer-menu .checkbox-toggle:checked + .hamburger > div {
@@ -109,12 +101,13 @@ a:active {
   visibility: visible;
 }
 .outer-menu .checkbox-toggle:checked ~ .menu > div {
-  transform: scale(1);
+  transform: scale(2);
   transition-duration: 0.75s;
 }
 .outer-menu .checkbox-toggle:checked ~ .menu > div > div {
   opacity: 1;
   transition: opacity 0.4s ease 0.4s;
+  width: 100%;
 }
 .outer-menu .checkbox-toggle:checked:hover + .hamburger > div {
   transform: rotate(225deg);
@@ -124,8 +117,8 @@ a:active {
   top: 0;
   left: 0;
   z-index: 1;
-  width: 54px;
-  height: 54px;
+  width: 49px;
+  height: 49px;
   padding: 0.4em 0.6em;
   border-radius: 0 0.12em 0.12em 0;
   cursor: pointer;
@@ -205,24 +198,84 @@ a:active {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  .social {
+    .fa-facebook {
+      color: #3b5998;
+    }
+    i.fa-telegram-plane {
+      color: $i-telegram;
+      transition: color 0.4s ease;
+      &:hover {
+        color: transparentize($color: $i-telegram, $amount: 0.5);
+      }
+    }
+    i.fa-twitter {
+      transition: color 0.4s ease;
+      color: $i-twitter;
+      &:hover {
+        color: transparentize($color: $i-twitter, $amount: 0.5);
+      }
+    }
+    i.fa-instagram {
+      background-image: $i-instagram;
+      background-size: 100%;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      &:hover {
+        background-image: linear-gradient(
+          45deg,
+          #405ce6ad,
+          #5851db9c,
+          #833ab4a8,
+          #c13584a2,
+          #e1306b8c,
+          #fd1d1da9
+        );
+        background-size: 100%;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+      }
+    }
+    .fa-discord {
+      color: #2c2f33;
+    }
+    .fa-telegram {
+      color: #0088cc;
+      position: relative;
+      .whitespace {
+        background-color: white;
+        padding: 8px;
+        position: absolute;
+        top: 11px;
+        right: 4px;
+        border-radius: 10px;
+        z-index: -1;
+      }
+    }
+  }
 }
 .outer-menu .menu > div > div > ul {
   list-style: none;
   padding: 0 1em;
+  width: 100%;
   margin: 0;
   display: block;
   max-height: 100vh;
 }
 .outer-menu .menu > div > div > ul > li {
-  padding: 0;
-  margin: 1em;
+  padding: 1rem;
   font-size: 24px;
-  display: block;
+  display: flex;
+  justify-content: center;
 }
 .outer-menu .menu > div > div > ul > li > a {
   position: relative;
   display: inline;
   cursor: pointer;
+  font-size: 0.5rem;
   transition: color 0.4s ease;
 }
 .outer-menu .menu > div > div > ul > li > a:hover {

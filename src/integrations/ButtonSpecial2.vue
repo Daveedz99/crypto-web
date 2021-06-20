@@ -1,5 +1,5 @@
 <template>
-  <a href="#" class="button"><i class="p-mr-2" :class="icon"></i>{{ label }}</a>
+  <a class="button"><i class="p-mr-2" :class="icon"></i>{{ label }}</a>
 </template>
 
 <script>
@@ -21,6 +21,7 @@ $color: #4f3566;
   display: inline-block;
   padding: 0.75rem 1.25rem;
   border-radius: 0.4rem;
+  cursor: pointer;
   color: #fff;
   letter-spacing: 0.15rem;
   transition: all 0.3s;

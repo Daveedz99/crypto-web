@@ -1,15 +1,15 @@
 <template>
   <div class="navbar" :class="colored ? 'colored' : ''">
     <div class="p-grid p-d-flex p-ai-center p-m-0">
-      <div class="p-col-4 p-offset-2 sx">
+      <div class="p-col-4 p-lg-6 p-offset-2 sx">
         <img
           class="img-responsive logo"
           src="https://fakeimg.pl/70x70/?LOGO&font=lobster"
         />
         <!-- <img class="img-responsive logo" src="../assets/imgs/logo.png" />  -->
       </div>
-      <div class="p-col-6">
-        <div class="anchors p-d-none p-d-md-flex p-jc-between">
+      <div class="p-col-6 p-md-6 p-lg-4">
+        <div class="anchors p-d-none p-d-md-flex p-jc-around">
           <div class="anchor" v-scroll-to="'#roadmap'">ROADMAP</div>
           <div class="anchor" v-scroll-to="'#howtobuy'">HOW TO BUY</div>
           <div class="anchor" v-scroll-to="'#our-project'">OUR PROJECT</div>

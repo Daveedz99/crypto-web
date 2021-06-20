@@ -29,7 +29,7 @@
     <div class="section developers">
       <Developers />
     </div>
-    <ScrollTop icon="fad fa-chevron-up" :threshold="400" />
+    <ScrollTop icon="fad fa-chevron-up" behavior="smooth" :threshold="400" />
   </div>
 </template>
 <script>
@@ -49,14 +49,14 @@ export default {
       number: 0,
       tweenedNumber: 0,
       token: {
-        address: "0x83testdf1a7c56e7test7d321312TEST52e0a2aad0e",
-      },
+        address: "0x83testdf1a7c56e7test7d321312TEST52e0a2aad0e"
+      }
     };
   },
   props: {
     anchor: {
-      type: String,
-    },
+      type: String
+    }
   },
   components: {
     Counters,
@@ -64,7 +64,7 @@ export default {
     Slogan,
     HowToBuy,
     Social,
-    Developers,
+    Developers
   },
   methods: {
     //PARALLAX EFFECT DA RIVEDERE for each section
@@ -84,7 +84,7 @@ export default {
     //  mounted() {
     //    window.addEventListener("scroll", this.handleScroll);
     //  },
-  },
+  }
 };
 </script>
 <style lang="scss" scoped>
