@@ -136,7 +136,7 @@
       @update:visible="closeDialog()"
       :breakpoints="{ '960px': '75vw', '640px': '95vw' }"
       :style="{ width: '30vw' }"
-      :contentStyle="{backgroundColor: 'purple', }"
+      :contentStyle="{ backgroundColor: 'purple' }"
       autoZIndex
       modal
       dismissableMask
@@ -152,7 +152,7 @@ export default {
       dialog: {
         show: false,
         img: "",
-        imgName: ''
+        imgName: "",
       },
     };
   },
@@ -172,7 +172,7 @@ export default {
         return;
       }
       this.dialog.img += url;
-      this.dialog.imgName = imgName
+      this.dialog.imgName = imgName;
       console.log(url);
       this.dialog.show = "open";
     },
@@ -183,7 +183,18 @@ export default {
 #howtobuy {
   padding-top: 70px;
   padding-bottom: 70px;
-  background-color: rgba(127, 91, 255, 0.438);
+  background-image: linear-gradient(
+    to bottom,
+    #8854b4 0%,
+    #9269b4 12%,
+    #9778b1 25%,
+    #a78dbd 37%,
+    #a798b4 50%,
+    #beb7c5 62%,
+    #cac9d8 75%,
+    #f8f9fa 87%,
+    #f8f9fa 100%
+  );
 
   .section {
     padding: 1rem;
@@ -240,7 +251,7 @@ export default {
 .dinamycImg {
   max-width: -webkit-fill-available;
 }
-.p-dialog .p-component{
+.p-dialog .p-component {
   border-radius: 2rem !important;
 }
 </style>

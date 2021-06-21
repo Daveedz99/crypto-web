@@ -21,6 +21,6 @@ export default {
   padding-top: 70px;
   min-height: 100vh;
   padding-bottom: 70px;
-  background-color: rgba(91, 203, 255, 0.699);
+  background-color: #f8f9fa;
 }
 </style>

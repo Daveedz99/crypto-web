@@ -31,7 +31,7 @@ export default {
   name: "App",
   data() {
     return {
-      fakeLoading: true,
+      fakeLoading: false,
     };
   },
   components: {
@@ -40,12 +40,23 @@ export default {
     Footer,
     FingerprintSpinner,
   },
-  methods: {},
+  methods: {
+    isMobile() {
+      if (screen.width <= 760) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+  },
   created() {
     AOS.init();
-    setTimeout(() => {
-      this.fakeLoading = false;
-    }, 2000);
+    if(this.isMobile()){
+      this.fakeLoading = true
+      setTimeout(() => {
+        this.fakeLoading = false;
+      }, 3000);
+    }
   },
 };
 </script>

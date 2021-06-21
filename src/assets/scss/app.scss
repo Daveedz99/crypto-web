@@ -49,22 +49,26 @@ body {
   // background-image: url("/wawes.svg");
   // background: -webkit-linear-gradient(to right, $bg-primary, $bg-secondary); /* Chrome 10-25, Safari 5.1-6 */
   // background: linear-gradient(to right, $bg-primary, $bg-secondary);
-  background: url('assets/imgs/waves.svg') no-repeat bottom 30% center;
-  // background-position: 20% 0;
-  // height: 500px;
+  background-image: url("assets/imgs/newwawe.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height: 255px;
+  display: flex;
+  justify-content: center;
   color: #fefefe;
   text-align: center;
   padding: 6vh;
 }
 
-.full-y{
+.full-y {
   min-height: 100vh;
 }
-.overflow{
+.overflow {
   overflow-y: hidden;
 }
-.fingerprint-spinner{
-  position: absolute !important;  
+.fingerprint-spinner {
+  position: absolute !important;
   top: 50% !important;
   left: 50% !important;
 }
