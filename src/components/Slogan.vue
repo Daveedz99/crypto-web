@@ -28,6 +28,6 @@ export default {
 
 <style lang="scss" scoped>
 #slogan{
-  background-color: rgba(0, 0, 0, 0.699);
+  background-color: #f0eef4;
 }
 </style>

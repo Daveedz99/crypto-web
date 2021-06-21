@@ -94,7 +94,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/scss/variables.scss";
 #counters {
-  background: linear-gradient(to right, #aaaaaab9, #2b2b2bb9);
+  background: #f0eef4;
   padding: 4rem 1rem 1rem 1rem;
   min-height: 100vh;
   .p-card.p-component {

@@ -84,7 +84,18 @@ export default {
 #roadmap {
   padding-top: 70px;
   padding-bottom: 70px;
-  background-color: rgba(204, 0, 245, 0.699);
+  background-image: linear-gradient(
+    to top,
+    #8854b4 0%,
+    #8854b4 12%,
+    #8854b4 25%,
+    #8854b4 37%,
+    #8854b4 50%,
+    #8854b4 62%,
+    #996ebb 75%,
+    #af96c4 87%,
+    #af96c4 100%
+  );
   .custom-marker {
     display: flex;
     width: 2rem;

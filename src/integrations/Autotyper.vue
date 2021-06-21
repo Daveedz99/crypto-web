@@ -67,8 +67,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h3{
+  color:#000; 
+}
 .typer-text {
-  color: #ffff;
+  color: #0000 ;
   font-weight: bold;
   span.typed-text {
     color: #8854b4;

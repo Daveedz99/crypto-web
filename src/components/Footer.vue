@@ -26,16 +26,17 @@ export default {
 .business-mail {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .copyright {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .social {
+  display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   .fa-facebook {
     color: #3b5998;
   }
