@@ -3,7 +3,7 @@
     <div class="p-grid p-d-flex p-ai-center p-m-0">
       <div class="p-col-4 p-lg-6 p-offset-2 sx">
         <img
-          class="img-responsive logo"
+          class=" logo"
           src="https://fakeimg.pl/70x70/?LOGO&font=lobster"
         />
         <!-- <img class="img-responsive logo" src="../assets/imgs/logo.png" />  -->
@@ -89,9 +89,10 @@ export default {
   transition: 0.4s all ease-in-out;
   .logo {
     margin-top: 0.5rem;
-    width: 5vw;
+    width: 40px;
+    height: 40px;
     @media only screen and (max-width: 600px) {
-      width: 10vw;
+      width: 40px;
     }
   }
   .anchor {

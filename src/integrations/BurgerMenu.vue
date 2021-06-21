@@ -46,14 +46,24 @@ export default {
   name: "BurgerMenu",
   data() {
     return {
-      opened: false
+      opened: false,
+      test: null,
     };
+  },
+  watch: {
+    opened(val) {
+      if (!val) {
+        document.body.classList.remove("overflow");
+      } else {
+        document.body.classList.add("overflow");
+      }
+    },
   },
   methods: {
     doCloseBurger() {
       this.opened = false;
-    }
-  }
+    },
+  },
 };
 </script>
 

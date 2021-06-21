@@ -1,11 +1,9 @@
 <template>
-
-    <h1>
-      BUY
-      <span class="typed-text">{{ typer.value }}</span>
-      <span class="cursor" :class="{ typing: typer.status }">&nbsp;</span>
-    </h1>
-
+  <h3 class="typer-text">
+    BUY
+    <span class="typed-text">{{ typer.value }}</span>
+    <span class="cursor" :class="{ typing: typer.status }">&nbsp;</span>
+  </h3>
 </template>
 
 <script>
@@ -23,10 +21,9 @@ export default {
           "MUSA",
         ],
         speed: 200,
-        erasingSpeed: 100,
-        newTextDelay: 20,
+        erasingSpeed: 200,
+        newTextDelay: 50,
       },
-
       typeArrayIndex: 0,
       charIndex: 0,
     };
@@ -41,8 +38,8 @@ export default {
         this.charIndex += 1;
         setTimeout(this.typeText, this.typer.speed);
       } else {
-        this.typeStatus = false;
-        setTimeout(this.eraseText, this.newTextDelay);
+        this.typer.status = false;
+        setTimeout(this.eraseText, this.typer.newTextDelay);
       }
     },
     eraseText() {
@@ -55,7 +52,7 @@ export default {
         this.charIndex -= 1;
         setTimeout(this.eraseText, this.erasingSpeed);
       } else {
-        this.typeStatus = false;
+        this.typer.status = false;
         this.typeArrayIndex += 1;
         if (this.typeArrayIndex >= this.typer.words.length)
           this.typeArrayIndex = 0;
@@ -70,9 +67,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h1 {
+.typer-text {
   color: #ffff;
-  font-weight: normal;
+  font-weight: bold;
   span.typed-text {
     color: #8854b4;
   }

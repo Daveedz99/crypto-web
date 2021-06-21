@@ -81,50 +81,55 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.custom-marker {
-  display: flex;
-  width: 2rem;
-  height: 2rem;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-::v-deep(.p-timeline-event-content) ::v-deep(.p-timeline-event-opposite) {
-  line-height: 1;
-}
-.card {
-  background: transparent;
-  color: #ffffff;
-  //   box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%),
-  //     0 1px 3px 0 rgb(0 0 0 / 12%);
-  border-radius: 3px;
-}
-.customized-timeline {
-  padding: 1rem;
-}
-@media screen and (max-width: 960px) {
-  .p-timeline.p-component{
+#roadmap {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background-color: rgba(204, 0, 245, 0.699);
+  .custom-marker {
+    display: flex;
+    width: 2rem;
+    height: 2rem;
     align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    border-radius: 50%;
+    z-index: 1;
   }
-  ::v-deep(.customized-timeline) {
-    .p-timeline-event:nth-child(even) {
-      flex-direction: row !important;
 
-      .p-timeline-event-content {
-        text-align: left !important;
+  ::v-deep(.p-timeline-event-content) ::v-deep(.p-timeline-event-opposite) {
+    line-height: 1;
+  }
+  .card {
+    background: transparent;
+    color: #ffffff;
+    //   box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%),
+    //     0 1px 3px 0 rgb(0 0 0 / 12%);
+    border-radius: 3px;
+  }
+  .customized-timeline {
+    padding: 1rem;
+  }
+  @media screen and (max-width: 960px) {
+    .p-timeline.p-component {
+      align-items: center;
+    }
+    ::v-deep(.customized-timeline) {
+      .p-timeline-event:nth-child(even) {
+        flex-direction: row !important;
+
+        .p-timeline-event-content {
+          text-align: left !important;
+        }
       }
-    }
 
-    .p-timeline-event-opposite {
-      flex: 0;
-    }
+      .p-timeline-event-opposite {
+        flex: 0;
+      }
 
-    .p-card {
-      width: 0%;
-      margin-top: 1rem;
+      .p-card {
+        width: 0%;
+        margin-top: 1rem;
+      }
     }
   }
 }

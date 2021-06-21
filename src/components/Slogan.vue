@@ -1,5 +1,5 @@
 <template>
-  <div class="p-grid p-pt-3">
+  <div class="p-grid p-pt-3" id="slogan">
     <div class="p-col-12">
       <img src="https://fakeimg.pl/350x200/?text=MUSA&font=lobster" />
       <Autotyper />
@@ -26,4 +26,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+#slogan{
+  background-color: rgba(0, 0, 0, 0.699);
+}
+</style>

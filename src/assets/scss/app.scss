@@ -55,3 +55,14 @@ body {
   z-index: 1;
 }
 
+.full-y{
+  min-height: 100vh;
+}
+.overflow{
+  overflow-y: hidden;
+}
+.fingerprint-spinner{
+  position: absolute !important;  
+  top: 50% !important;
+  left: 50% !important;
+}

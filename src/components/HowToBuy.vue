@@ -181,7 +181,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 #howtobuy {
-  padding: 1rem;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background-color: rgba(127, 91, 255, 0.438);
+
   .section {
     padding: 1rem;
     margin: 1rem;

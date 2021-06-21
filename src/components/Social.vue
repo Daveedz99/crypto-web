@@ -52,7 +52,7 @@ export default {
   padding: 1rem;
   gap: 1rem;
   z-index: 50;
-  top: 50%;
+  top: 45%;
   right: 0;
   position: fixed;
   background-color: rgba(70, 70, 70, 0.89);
