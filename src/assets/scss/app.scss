@@ -47,12 +47,14 @@ body {
 #footer {
   width: 100%;
   // background-image: url("/wawes.svg");
-  background: -webkit-linear-gradient(to right, $bg-primary, $bg-secondary); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, $bg-primary, $bg-secondary);
+  // background: -webkit-linear-gradient(to right, $bg-primary, $bg-secondary); /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(to right, $bg-primary, $bg-secondary);
+  background: url('assets/imgs/waves.svg') no-repeat bottom 30% center;
+  // background-position: 20% 0;
+  // height: 500px;
   color: #fefefe;
   text-align: center;
   padding: 6vh;
-  z-index: 1;
 }
 
 .full-y{
