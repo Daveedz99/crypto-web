@@ -47,7 +47,6 @@ export default {
   data() {
     return {
       opened: false,
-      test: null,
     };
   },
   watch: {
@@ -87,8 +86,8 @@ a:active {
 }
 .outer-menu .checkbox-toggle {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 9px;
+  left: -23px;
   z-index: 2;
   cursor: pointer;
   width: 49px;
@@ -124,8 +123,8 @@ a:active {
 }
 .outer-menu .hamburger {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 9px;
+  left: -19px;
   z-index: 1;
   width: 49px;
   height: 49px;

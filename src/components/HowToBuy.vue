@@ -134,9 +134,9 @@
       :visible="dialog.show === 'open'"
       :showHeader="false"
       @update:visible="closeDialog()"
-      :breakpoints="{ '960px': '75vw', '640px': '95vw' }"
+      :breakpoints="{ '960px': '75vw', '640px': 'fit-content' }"
       :style="{ width: '30vw' }"
-      :contentStyle="{ backgroundColor: 'purple' }"
+      :contentStyle="{ backgroundColor: 'rgba(0, 0, 0, 0.358)' }"
       autoZIndex
       modal
       dismissableMask
@@ -179,7 +179,7 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss" >
 #howtobuy {
   padding-top: 70px;
   padding-bottom: 70px;
@@ -233,9 +233,6 @@ export default {
     img {
       width: 25vw;
       transition: all 0.6s;
-      // &:hover {
-      //   box-shadow: 0 11px 15px -7px rgba(0,0,0,.2),0 24px 38px 3px rgba(0,0,0,.14),0 9px 46px 8px rgba(0,0,0,.12)
-      // }
     }
   }
   .before-enter {
@@ -248,10 +245,13 @@ export default {
     transform: translateY(0px);
   }
 }
+.p-dialog .p-dialog-content {
+  display: flex;
+  justify-content: center;
+  padding: 1rem !important;
+}
 .dinamycImg {
-  max-width: -webkit-fill-available;
+  max-width: 20vw;
 }
-.p-dialog .p-component {
-  border-radius: 2rem !important;
-}
+
 </style>

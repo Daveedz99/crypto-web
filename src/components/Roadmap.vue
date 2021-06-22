@@ -11,7 +11,7 @@
       </template>
       <template #content="el">
         <div class="card" data-aos="fade-up" data-aos-duration="2500">
-          <h2 class="p-text-bold">
+          <h2 class="p-text-bold text-dark">
             {{ el.item.status }}
             {{ el.item.date }}
           </h2>
@@ -50,27 +50,24 @@ export default {
           status: "Q3",
           date: "",
           icon: "fas fa-cog",
-          color: "#673AB7",
+          color: "#9C27B0",
           image: "https://fakeimg.pl/350x200/?text=Q3&font=lobster",
-
           msg: "",
         },
         {
           status: "Q2",
           date: "Coming soon..",
           icon: "fas fa-coins",
-          color: "#FF9800",
+          color: "#9C27B0",
           image: "https://fakeimg.pl/350x200/?text=Q2&font=lobster",
-
           msg: "",
         },
         {
           status: "Q1",
           date: "Coming soon..",
           icon: "fas fa-check",
-          color: "#607D8B",
+          color: "#9C27B0",
           image: "https://fakeimg.pl/350x200/?text=Q1&font=lobster",
-
           msg: "",
         },
       ],
@@ -84,17 +81,18 @@ export default {
 #roadmap {
   padding-top: 70px;
   padding-bottom: 70px;
+  min-height: 100vh;
   background-image: linear-gradient(
     to top,
     #8854b4 0%,
     #8854b4 12%,
     #8854b4 25%,
-    #8854b4 37%,
-    #8854b4 50%,
-    #8854b4 62%,
-    #996ebb 75%,
-    #af96c4 87%,
-    #af96c4 100%
+    #8f67af 37%,
+    #b398ca 50%,
+    #c7b2da 62%,
+    #e8d8f5 75%,
+    #f8f9fa 87%,
+    #f8f9fa 100%
   );
   .custom-marker {
     display: flex;

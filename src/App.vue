@@ -51,8 +51,8 @@ export default {
   },
   created() {
     AOS.init();
-    if(this.isMobile()){
-      this.fakeLoading = true
+    if (this.isMobile()) {
+      this.fakeLoading = true;
       setTimeout(() => {
         this.fakeLoading = false;
       }, 3000);

@@ -1,6 +1,5 @@
 <template>
   <h3 class="typer-text">
-    BUY
     <span class="typed-text">{{ typer.value }}</span>
     <span class="cursor" :class="{ typing: typer.status }">&nbsp;</span>
   </h3>
@@ -15,14 +14,14 @@ export default {
         value: "",
         status: false,
         words: [
-          "AND SELL MUSA USING CRYPTO",
-          "FOR SEE THE FUTURE E-COMMERCE",
-          "PROJECTS",
-          "MUSA",
+          "BUY AND SELL MUSA USING CRYPTO",
+          "MUSA FOR SEE THE FUTURE E-COMMERCE",
+          "MUSA FOR PROJECTS",
+          "MUSA FOR MUSA",
         ],
-        speed: 200,
-        erasingSpeed: 200,
-        newTextDelay: 50,
+        speed: 100,
+        erasingSpeed: 400,
+        newTextDelay: 10,
       },
       typeArrayIndex: 0,
       charIndex: 0,
@@ -67,11 +66,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h3{
-  color:#000; 
+h3 {
+  color: #000;
 }
 .typer-text {
-  color: #0000 ;
+  color: #0000;
   font-weight: bold;
   span.typed-text {
     color: #8854b4;

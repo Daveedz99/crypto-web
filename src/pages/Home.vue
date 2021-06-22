@@ -92,18 +92,6 @@ $prim: #af96c4;
   }
   .our-project {
     padding: 2rem 0rem 2rem 0rem;
-    background-image: linear-gradient(
-    to top,
-    $prim 0%,
-    rgba($prim, 0.8) 12%,
-    rgba($prim, 0.7) 25%,
-    rgba($prim, 0.6) 37%,
-    rgba($prim, 0.5) 50%,
-    rgba($prim, 0.4) 62%,
-    rgba($prim, 0.3) 75%,
-    rgba($prim, 0.2) 87%,
-    rgba($prim, 0.1) 100%
-  );
   }
   .p-button {
     z-index: 0;

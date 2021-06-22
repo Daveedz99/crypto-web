@@ -1,11 +1,11 @@
 <template>
   <div id="counters">
-    <TokenAddress :token="token" />
+    <TokenAddress :token="token" data-aos="fade-up" data-aos-duration="1500" />
     <div class="p-grid p-jc-center p-mx-0 p-my-0">
-      <Card class="counters-card p-col-12 p-lg-3">
+      <Card class="counters-card-1 p-col-12 p-lg-3" data-aos="fade-up" data-aos-duration="1500">
         <template #content>
           <div class="counter">
-            <i class="fad fa-hand-holding-water p-mr-3"></i>
+            <i class="fas fa-hand-holding-water p-mr-3"></i>
             <Autocounter
               ref="counter"
               :startAmount="0"
@@ -19,10 +19,13 @@
               :autoinit="true"
             />
           </div>
-          <span> MUSA holders </span>
+          <span class="detail"> MUSA holders </span>
         </template>
       </Card>
-      <Card class="counters-card p-col-12 p-lg-3 p-mx-lg-3 p-my-4 p-my-lg-0">
+      <Card
+        class="counters-card-2 p-col-12 p-lg-3 p-mx-md-1 p-mx-lg-5 p-my-4 p-my-lg-0"
+        data-aos="fade-up" data-aos-duration="1500"
+      >
         <template #content>
           <div class="counter">
             <i class="fad fa-shopping-cart p-mr-3"></i>
@@ -39,10 +42,10 @@
               :autoinit="true"
             />
           </div>
-          <span> MUSA Marketcap </span>
+          <span class="detail"> MUSA Marketcap </span>
         </template>
       </Card>
-      <Card class="counters-card p-col-12 p-lg-3">
+      <Card class="counters-card-3 p-col-12 p-lg-3" data-aos="fade-up" data-aos-duration="1500">
         <template #content>
           <div class="counter">
             <i class="fad fa-coins p-mr-3"></i>
@@ -59,7 +62,7 @@
               :autoinit="true"
             />
           </div>
-          <span>MUSA price per coin </span>
+          <span class="detail">MUSA price per coin </span>
         </template>
       </Card>
     </div>
@@ -94,28 +97,43 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/scss/variables.scss";
 #counters {
-  background: #f0eef4;
-  padding: 4rem 1rem 1rem 1rem;
+  padding: 20vh 1rem 1rem 1rem;
   min-height: 100vh;
+  .counters-card-1 {
+    background-position: left;
+  }
+  .counters-card-2 {
+    background-position: center;
+  }
+  .counters-card-3 {
+    background-position: right;
+  }
   .p-card.p-component {
-    background-color: $bg-transparent;
+    background-color: $primary-transparent;
+    background-image: url("../assets/imgs/symbol-scatter.png");
+    background-size: contain;
+    background-repeat: no-repeat;
     padding: 1rem;
     border-radius: 10px;
-    color: rgba(255, 255, 255, 0.781);
+    color: $text-primary;
     i.fa-coins {
-      color: $text-secondary;
+      color: #35003a;
     }
     i.fa-hand-holding-water {
-      color: #6868db;
+      color: #35003a;
     }
     i.fa-shopping-cart {
-      color: #628f48;
+      color: #35003a;
     }
     .p-card-body {
       padding: 0 !important;
     }
     .counter {
       font-size: 2.5rem;
+      font-weight: bolder;
+    }
+    .detail {
+      font-weight: bolder;
     }
   }
 }

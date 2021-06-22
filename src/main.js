@@ -4,6 +4,7 @@ import App from "./App.vue";
 //OTHERS
 import VueClipboard from "vue3-clipboard";
 import VueScrollTo from "vue-scrollto";
+import ButtonSpecial2 from "@/integrations/ButtonSpecial2.vue"
 
 //PRIME VUE IMPORTS
 import Button from "primevue/button";
@@ -44,6 +45,7 @@ const app = createApp(App)
   .component("ScrollTop", ScrollTop)
   .component("Card", Card)
   .component("Button", Button)
+  .component("ButtonSpecial2", ButtonSpecial2)
   .component("Timeline", Timeline)
   .component("Dialog", Dialog);
 
