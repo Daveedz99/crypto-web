@@ -66,9 +66,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h3 {
-  color: #000;
-}
 .typer-text {
   color: #0000;
   font-weight: bold;
@@ -79,7 +76,7 @@ h3 {
     display: inline-block;
     margin-left: 3px;
     width: 4px;
-    background-color: #fff;
+    background-color: darken(#8854b4, 40);
     animation: cursorBlink 1s infinite;
   }
   span.cursor.typing {
@@ -88,7 +85,7 @@ h3 {
 }
 @keyframes cursorBlink {
   49% {
-    background-color: #fff;
+    background-color: darken(#8854b4, 40);
   }
   50% {
     background-color: transparent;

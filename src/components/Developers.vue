@@ -6,7 +6,7 @@
         v-for="dev in devs"
         :key="dev"
       >
-        <Card data-aos="fade-up" data-aos-duration="1500">
+        <Card data-aos="fade-up" data-aos-duration="2500">
           <template #header>
             <!-- <img alt="user header" src="demo/images/usercard.png" /> -->
             <i class="fad fa-3x fa-user"></i>
