@@ -13,7 +13,7 @@
     ></iframe> 
     </div>-->
     <div id="our-project" class="section our-project">
-      <h3 class="p-my-0">OUR PROJECT</h3>
+    <OurProject />
     </div>
     <div class="section">
       <Roadmap />
@@ -34,6 +34,7 @@ import Slogan from "../components/Slogan.vue";
 import HowToBuy from "../components/HowToBuy.vue";
 import Social from "../components/Social.vue";
 import Developers from "../components/Developers.vue";
+import OurProject from "../components/OurProject.vue";
 // import simpleParallax from "simple-parallax-js";
 
 export default {
@@ -60,6 +61,7 @@ export default {
     HowToBuy,
     Social,
     Developers,
+    OurProject
   },
   methods: {
     //PARALLAX EFFECT DA RIVEDERE for each section

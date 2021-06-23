@@ -68,7 +68,7 @@ export default {
   margin: 0;
   color: whitesmoke;
   transition: 0.4s all ease-in-out;
-  background: $bg-primary;
+  background: transparent;
   border-radius: 17px;
   .logo {
     margin-top: 0.5rem;
