@@ -58,9 +58,26 @@ export default {
   top: 45%;
   right: 0;
   position: fixed;
-  background-color: $primary-transparent;
+  // background-color: $primary-transparent;
   border-radius: 5px 0px 0px 5px;
   transition: all 1s ease;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+
+  @keyframes gradient {
+    0% {
+      transition: all 0.4s ease-in-out;
+
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
   &:hover {
     padding: 1.4rem;
     background-color: transparentize($primary-transparent, $amount: 0.2);

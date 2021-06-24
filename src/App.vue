@@ -1,9 +1,10 @@
 <template>
-  <div class="full-y" :class="fakeLoading ? 'bg-dark' : 'bg-light'">
-    <FingerprintSpinner
+  <div class="full-y" :class="fakeLoading ? 'bg-darkfull' : 'bg-light'">
+    <BreedingRhombusSpinner
+      id="spinner"
       :animation-duration="1500"
       :size="64"
-      color="#800080"
+      color="#b193c9"
       v-if="fakeLoading"
     />
     <div v-if="!fakeLoading">
@@ -24,7 +25,7 @@
 import Header from "./components/Header.vue";
 import Home from "./pages/Home.vue";
 import Footer from "./components/Footer.vue";
-import { FingerprintSpinner } from "epic-spinners";
+import { BreedingRhombusSpinner } from "epic-spinners";
 import AOS from "aos";
 import "aos/dist/aos.css";
 export default {
@@ -38,7 +39,7 @@ export default {
     Header,
     Home,
     Footer,
-    FingerprintSpinner,
+    BreedingRhombusSpinner,
   },
   methods: {
     isMobile() {

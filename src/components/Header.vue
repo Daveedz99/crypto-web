@@ -67,7 +67,7 @@ export default {
 .navbar {
   margin: 0;
   color: whitesmoke;
-  transition: 0.4s all ease-in-out;
+  transition: all 0.4s ease-in-out;
   background: transparent;
   border-radius: 17px;
   .logo {
@@ -96,9 +96,26 @@ export default {
   }
 }
 .colored {
-  background: #ad8ec7;
+  // background: #ad8ec7;
   box-shadow: 0 11px 14px -7px rgba(0, 0, 0, 0.2),
     0 23px 36px 3px rgba(0, 0, 0, 0.14), 0 9px 44px 8px rgba(0, 0, 0, 0.12);
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+
+  @keyframes gradient {
+    0% {
+      transition: all 0.4s ease-in-out;
+
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 }
 .burger {
   .hidden {

@@ -243,7 +243,11 @@
 .bg-transparent {
     background-color: transparent !important;
 }
-
+.bg-darkfull {
+    background-color: #1d1f20 !important;
+    min-height: 100vh;
+    overflow: hidden;
+}
 /* Color Text */
 .text-primary {
     color: #007bff !important;
