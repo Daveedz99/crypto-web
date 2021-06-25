@@ -3,7 +3,7 @@
     id="tsparticles"
     :particlesInit="particlesInit"
     :particlesLoaded="particlesLoaded"
-    :options="particles"
+    :options="particlesJs"
   />
 </template>
 <script>
@@ -11,7 +11,7 @@ export default {
   name: "OurProject",
   data() {
     return {
-      particles: {
+      particlesJs: {
         background: {
           color: {
             value: "transparent",
@@ -22,8 +22,8 @@ export default {
           size: "20%",
         },
         fullScreen: {
-          enable: false,
-          zIndex: 1,
+          enable: true,
+          zIndex: 0,
         },
         interactivity: {
           events: {
@@ -83,7 +83,7 @@ export default {
             density: {
               enable: true,
             },
-            value: 160,
+            value: 50,
           },
           opacity: {
             random: {

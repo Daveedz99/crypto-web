@@ -100,12 +100,14 @@ $prim: #af96c4;
   }
   .p-scrolltop {
     z-index: 10 !important;
+    background: linear-gradient(-45deg, #ee76528c, #e73c7e86, #23a5d586, #23d5ab7a);
   }
   .p-scrolltop.p-link {
     left: 1rem;
     @media only screen and (max-width: 600px) {
       max-width: 35px;
       max-height: 35px;
+      
       opacity: 0.5;
     }
   }

@@ -60,7 +60,7 @@ export default {
   min-height: 100vh;
   padding-bottom: 70px;
   display: flex;
-  background-color: #f8f9fa;
+  // background-color: #f8f9fa;
 
   .p-card {
     transition: all 0.3s ease;
