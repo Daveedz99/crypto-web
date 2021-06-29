@@ -121,7 +121,7 @@ a:active {
 }
 .outer-menu .hamburger {
   position: absolute;
-  top: 0;
+  top: 0.3rem;
   left: 0;
   z-index: 1;
   width: 54px;
