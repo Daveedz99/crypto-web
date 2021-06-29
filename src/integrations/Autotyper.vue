@@ -1,11 +1,8 @@
 <template>
-
-    <h1>
-      BUY
-      <span class="typed-text">{{ typer.value }}</span>
-      <span class="cursor" :class="{ typing: typer.status }">&nbsp;</span>
-    </h1>
-
+  <h3 class="typer-text">
+    <span class="typed-text">{{ typer.value }}</span>
+    <span class="cursor" :class="{ typing: typer.status }">&nbsp;</span>
+  </h3>
 </template>
 
 <script>
@@ -17,16 +14,15 @@ export default {
         value: "",
         status: false,
         words: [
-          "AND SELL MUSA USING CRYPTO",
-          "FOR SEE THE FUTURE E-COMMERCE",
-          "PROJECTS",
-          "MUSA",
+          "BUY AND SELL MUSA USING CRYPTO",
+          "MUSA FOR SEE THE FUTURE E-COMMERCE",
+          "MUSA FOR PROJECTS",
+          "MUSA FOR MUSA",
         ],
-        speed: 200,
-        erasingSpeed: 100,
-        newTextDelay: 20,
+        speed: 100,
+        erasingSpeed: 400,
+        newTextDelay: 10,
       },
-
       typeArrayIndex: 0,
       charIndex: 0,
     };
@@ -41,8 +37,8 @@ export default {
         this.charIndex += 1;
         setTimeout(this.typeText, this.typer.speed);
       } else {
-        this.typeStatus = false;
-        setTimeout(this.eraseText, this.newTextDelay);
+        this.typer.status = false;
+        setTimeout(this.eraseText, this.typer.newTextDelay);
       }
     },
     eraseText() {
@@ -55,7 +51,7 @@ export default {
         this.charIndex -= 1;
         setTimeout(this.eraseText, this.erasingSpeed);
       } else {
-        this.typeStatus = false;
+        this.typer.status = false;
         this.typeArrayIndex += 1;
         if (this.typeArrayIndex >= this.typer.words.length)
           this.typeArrayIndex = 0;
@@ -70,9 +66,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h1 {
-  color: #ffff;
-  font-weight: normal;
+.typer-text {
+  color: #0000;
+  font-weight: bold;
   span.typed-text {
     color: #8854b4;
   }
@@ -80,7 +76,7 @@ h1 {
     display: inline-block;
     margin-left: 3px;
     width: 4px;
-    background-color: #fff;
+    background-color: darken(#8854b4, 40);
     animation: cursorBlink 1s infinite;
   }
   span.cursor.typing {
@@ -89,7 +85,7 @@ h1 {
 }
 @keyframes cursorBlink {
   49% {
-    background-color: #fff;
+    background-color: darken(#8854b4, 40);
   }
   50% {
     background-color: transparent;

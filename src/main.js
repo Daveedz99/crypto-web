@@ -4,6 +4,8 @@ import App from "./App.vue";
 //OTHERS
 import VueClipboard from "vue3-clipboard";
 import VueScrollTo from "vue-scrollto";
+import ButtonSpecial2 from "@/integrations/ButtonSpecial2.vue"
+import Particles from "particles.vue3";
 
 //PRIME VUE IMPORTS
 import Button from "primevue/button";
@@ -23,6 +25,7 @@ import "primevue/resources/primevue.min.css";
 
 const app = createApp(App)
   .use(PrimeVue, { ripple: true })
+  .use(Particles)
   .use(VueClipboard, { autoSetContainer: true, appendToBody: true })
   .use(VueScrollTo, {
     container: "body",
@@ -44,6 +47,7 @@ const app = createApp(App)
   .component("ScrollTop", ScrollTop)
   .component("Card", Card)
   .component("Button", Button)
+  .component("ButtonSpecial2", ButtonSpecial2)
   .component("Timeline", Timeline)
   .component("Dialog", Dialog);
 

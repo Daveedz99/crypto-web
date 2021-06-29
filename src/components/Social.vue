@@ -4,13 +4,17 @@
     :class="transaprentize ? 'transparentize' : ''"
   >
     <div class="social-icon">
-      <i class="fab fa-telegram-plane"></i>
+      <i class="fab fa-telegram-plane">
+        <span class="whitespace"></span>
+      </i>
     </div>
     <div class="social-icon">
       <i class="fab fa-instagram"></i>
     </div>
     <div class="social-icon">
-      <i class="fab fa-twitter"></i>
+      <i class="fab fa-discord">
+        <span class="whitespace"></span>
+      </i>
     </div>
   </div>
 </template>
@@ -24,7 +28,7 @@ export default {
   },
   methods: {
     handleScroll() {
-      if (window.scrollY >= 4000) {
+      if (window.scrollY >= 5000) {
         this.transaprentize = true;
       } else {
         this.transaprentize = false;
@@ -43,7 +47,6 @@ export default {
 @import "@/assets/scss/variables.scss";
 .transparentize {
   opacity: 0;
-  //  transition: all 0.5s ease;
 }
 .socialbox {
   display: flex;
@@ -52,18 +55,32 @@ export default {
   padding: 1rem;
   gap: 1rem;
   z-index: 50;
-  top: 50%;
+  top: 45%;
   right: 0;
   position: fixed;
-  background-color: rgba(70, 70, 70, 0.89);
+  // background-color: $primary-transparent;
   border-radius: 5px 0px 0px 5px;
-  // transition: padding 1.5s ease;
-  // transition: background-color 1.5s ease;
   transition: all 1s ease;
-  // transition: opacity 0.5s ease;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+
+  @keyframes gradient {
+    0% {
+      transition: all 0.4s ease-in-out;
+
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
   &:hover {
     padding: 1.4rem;
-    background-color: rgba(80, 80, 80, 0.774);
+    background-color: transparentize($primary-transparent, $amount: 0.2);
   }
 }
 .social-icon {
@@ -92,6 +109,7 @@ export default {
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
     &:hover {
+      cursor: pointer;
       background-image: linear-gradient(
         45deg,
         #405ce6ad,
@@ -105,6 +123,40 @@ export default {
       background-clip: text;
       -webkit-text-fill-color: transparent;
       -moz-text-fill-color: transparent;
+    }
+  }
+  i.fa-telegram-plane {
+    color: #0088cc;
+    position: relative;
+    transition: color 0.4s ease;
+    z-index: 1;
+    &:hover {
+      cursor: pointer;
+      color: #56a5cc;
+    }
+  }
+  i.fa-discord {
+    color: #2c2f33;
+    position: relative;
+    z-index: 1;
+    transition: color 0.4s ease;
+    &:hover {
+      color: #4e5358;
+      cursor: pointer;
+    }
+  }
+  .whitespace {
+    background-color: white;
+    padding: 11px;
+    position: absolute;
+    top: 11px;
+    right: 4px;
+    border-radius: 10px;
+    z-index: -1;
+    @media only screen and (max-width: 600px) {
+      padding: 8px;
+      top: 6px;
+      right: 1px;
     }
   }
 }

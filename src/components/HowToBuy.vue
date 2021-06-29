@@ -134,9 +134,9 @@
       :visible="dialog.show === 'open'"
       :showHeader="false"
       @update:visible="closeDialog()"
-      :breakpoints="{ '960px': '75vw', '640px': '95vw' }"
+      :breakpoints="{ '960px': '75vw', '640px': 'fit-content' }"
       :style="{ width: '30vw' }"
-      :contentStyle="{backgroundColor: 'purple', }"
+      :contentStyle="{ backgroundColor: 'rgba(0, 0, 0, 0.358)' }"
       autoZIndex
       modal
       dismissableMask
@@ -152,7 +152,7 @@ export default {
       dialog: {
         show: false,
         img: "",
-        imgName: ''
+        imgName: "",
       },
     };
   },
@@ -172,16 +172,30 @@ export default {
         return;
       }
       this.dialog.img += url;
-      this.dialog.imgName = imgName
+      this.dialog.imgName = imgName;
       console.log(url);
       this.dialog.show = "open";
     },
   },
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss" >
 #howtobuy {
-  padding: 1rem;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background-image: linear-gradient(
+    to bottom,
+    #8854b4 0%,
+    #9269b4 12%,
+    #9778b1 25%,
+    #a78dbd 37%,
+    #a798b4 50%,
+    #beb7c5 62%,
+    #cac9d8 75%,
+    #f8f9fa 87%,
+    #f8f9fa 100%
+  );
+
   .section {
     padding: 1rem;
     margin: 1rem;
@@ -219,9 +233,6 @@ export default {
     img {
       width: 25vw;
       transition: all 0.6s;
-      // &:hover {
-      //   box-shadow: 0 11px 15px -7px rgba(0,0,0,.2),0 24px 38px 3px rgba(0,0,0,.14),0 9px 46px 8px rgba(0,0,0,.12)
-      // }
     }
   }
   .before-enter {
@@ -234,10 +245,13 @@ export default {
     transform: translateY(0px);
   }
 }
+.p-dialog .p-dialog-content {
+  display: flex;
+  justify-content: center;
+  padding: 1rem !important;
+}
 .dinamycImg {
-  max-width: -webkit-fill-available;
+  max-width: 20vw;
 }
-.p-dialog .p-component{
-  border-radius: 2rem !important;
-}
+
 </style>

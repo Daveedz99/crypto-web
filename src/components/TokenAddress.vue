@@ -1,12 +1,12 @@
 <template>
-  <div class="p-grid p-mt-0 p-py-5 animate__animated animate__zoomInDown">
+  <div class="p-grid p-mt-0 p-py-5">
     <div
-      class="p-col-10 p-offset-1 p-lg-4 p-lg-offset-4 tokenbox p-ripple"
+      class="p-col-10 p-offset-1 p-md-6 p-md-offset-3 p-lg-4 p-lg-offset-4 tokenbox p-ripple"
       v-ripple
       v-clipboard:copy="token.address"
       v-clipboard:success="doCopyToken"
     >
-      <h3>Token address:</h3>
+      <h3><i class="fad fa-alien-monster"></i> Token address:</h3>
       <div class="token">
         {{ token.address }}
       </div>
@@ -14,9 +14,7 @@
         enter-active-class="animate__animated animate__zoomIn "
         leave-active-class="animate__animated animate__zoomOut"
       >
-        <div class="tokenCopied" v-if="cloned">
-          <i class="fas fa-2x fa-check"></i>
-        </div>
+        <div class="tokenCopied" v-if="cloned">Copied</div>
       </transition>
     </div>
   </div>
@@ -49,13 +47,20 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import "@/assets/scss/variables.scss";
+
 .tokenbox {
-  color: black;
-  padding: 0.4rem;
+  color: $text-primary;
+  padding: 1rem;
   border-radius: 10px;
-  border: 2px solid #65197298;
   word-wrap: break-word;
-  background-color: #9b27b070;
+  transition: all 0.3s ease;
+  border-radius: 15px;
+  background-color: #7d4aa763;
+  background-image: url("../assets/imgs/scatter.png");
+  background-size: contain;
+  background-position: center right;
+  background-repeat: no-repeat;
   &:hover {
     cursor: pointer;
   }
@@ -63,7 +68,7 @@ export default {
     width: fit-content;
   }
   .tokenCopied {
-    color: #770173;
+    color: $text-primary;
     position: absolute;
     top: 5px;
     right: 10px;

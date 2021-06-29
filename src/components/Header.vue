@@ -1,46 +1,18 @@
 <template>
   <div class="navbar" :class="colored ? 'colored' : ''">
     <div class="p-grid p-d-flex p-ai-center p-m-0">
-      <div class="p-col-4 p-offset-2 sx">
-        <img
-          class="img-responsive logo"
-          src="https://fakeimg.pl/70x70/?LOGO&font=lobster"
-        />
+      <div class="p-col-4 p-lg-6 p-offset-2 sx">
+        <img class="logo" src="https://fakeimg.pl/70x70/?LOGO&font=lobster" />
         <!-- <img class="img-responsive logo" src="../assets/imgs/logo.png" />  -->
       </div>
-      <div class="p-col-6">
-        <div class="anchors p-d-none p-d-md-flex p-jc-between">
+      <div class="p-col-6 p-md-6 p-lg-4">
+        <div class="anchors p-d-none p-d-md-flex p-jc-around">
           <div class="anchor" v-scroll-to="'#roadmap'">ROADMAP</div>
           <div class="anchor" v-scroll-to="'#howtobuy'">HOW TO BUY</div>
           <div class="anchor" v-scroll-to="'#our-project'">OUR PROJECT</div>
         </div>
-
         <BurgerMenu />
       </div>
-
-      <!-- <div class="burger p-d-md-none" :class="{ active: isOpen }">
-          <slot>
-            <button
-              type="button"
-              class="burger-button"
-              @click="isOpen = !isOpen"
-            >
-              <span class="hidden">Toggle menu</span>
-              <span class="burger-bar burger-bar--1"></span>
-              <span class="burger-bar burger-bar--2"></span>
-              <span class="burger-bar burger-bar--3"></span>
-            </button>
-          </slot>
-        </div> -->
-      <!-- <span class="p-input-icon-left">
-          <i class="fas fa-search" />
-          <InputText
-            type="text"
-            v-model="query.search"
-            placeholder="Search"
-            class="search"
-          />
-        </span> -->
     </div>
   </div>
 </template>
@@ -58,18 +30,27 @@ export default {
   components: {
     BurgerMenu,
   },
-  watch: {
-    // isOpen(val){
-    //   console.log(val);
-    // }
-  },
-  computed: {},
   methods: {
-    handleScroll() {
-      if (window.scrollY >= 126) {
-        this.colored = true;
+    isMobile() {
+      if (screen.width <= 760) {
+        return true;
       } else {
-        this.colored = false;
+        return false;
+      }
+    },
+    handleScroll() {
+      if (this.isMobile()) {
+        if (window.scrollY >= 55) {
+          this.colored = true;
+        } else {
+          this.colored = false;
+        }
+      } else {
+        if (window.scrollY >= 114) {
+          this.colored = true;
+        } else {
+          this.colored = false;
+        }
       }
     },
   },
@@ -86,12 +67,15 @@ export default {
 .navbar {
   margin: 0;
   color: whitesmoke;
-  transition: 0.4s all ease-in-out;
+  transition: all 0.4s ease-in-out;
+  background: transparent;
+  border-radius: 17px;
   .logo {
     margin-top: 0.5rem;
-    width: 5vw;
+    width: 40px;
+    height: 40px;
     @media only screen and (max-width: 600px) {
-      width: 10vw;
+      width: 40px;
     }
   }
   .anchor {
@@ -112,7 +96,26 @@ export default {
   }
 }
 .colored {
-  background: $bg-primary;
+  // background: #ad8ec7;
+  box-shadow: 0 11px 14px -7px rgba(0, 0, 0, 0.2),
+    0 23px 36px 3px rgba(0, 0, 0, 0.14), 0 9px 44px 8px rgba(0, 0, 0, 0.12);
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+
+  @keyframes gradient {
+    0% {
+      transition: all 0.4s ease-in-out;
+
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 }
 .burger {
   .hidden {

@@ -32,11 +32,14 @@ body {
   flex: none;
 }
 #header {
-  position: sticky;
-  position: -webkit-sticky;
-  background-color: rgb(77, 77, 77);
+  position: fixed;
   top: 0px;
+  width: 100%;
   z-index: 100;
+  padding: 0.5rem 5rem 1rem 5rem;
+  @media only screen and (max-width: 800px) {
+    padding: 0.5rem 1rem 1rem 1rem;
+  }
 }
 
 #main {
@@ -46,12 +49,29 @@ body {
 
 #footer {
   width: 100%;
-  // background-image: url("/wawes.svg");
-  background: -webkit-linear-gradient(to right, $bg-primary, $bg-secondary); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, $bg-primary, $bg-secondary);
+  background-image: url("assets/imgs/newwawe.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height: 330px;
   color: #fefefe;
   text-align: center;
-  padding: 6vh;
-  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  @media only screen and (min-width: 1200px) {
+    padding: 6vh;
+  }
 }
 
+.full-y {
+  min-height: 100vh;
+}
+.overflow {
+  overflow-y: hidden;
+}
+#spinner {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+}
