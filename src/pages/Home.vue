@@ -35,7 +35,6 @@ import HowToBuy from "../components/HowToBuy.vue";
 import Social from "../components/Social.vue";
 import Developers from "../components/Developers.vue";
 import OurProject from "../components/OurProject.vue";
-// import simpleParallax from "simple-parallax-js";
 
 export default {
   name: "Home",
@@ -64,24 +63,24 @@ export default {
     OurProject
   },
   methods: {
-    //PARALLAX EFFECT DA RIVEDERE for each section
-    //    handleScroll() {
-    //     let el = document.getElementsByClassName("section3");
-    //      new simpleParallax(el, {
-    //        orientation: "right",
-    //        overflow: true,
-    //        scale: 1.5,
-    //        transition: "cubic-bezier(0,0,0,1)",
-    //      });
+    // //PARALLAX EFFECT DA RIVEDERE for each section
+    //     handleScroll() {
+    //      let el = document.getElementsByClassName("section3");
+    //       new simpleParallax(el, {
+    //         orientation: "up",
+    //         overflow: true,
+    //         scale: 1.5,
+    //         transition: "cubic-bezier(0,0,0,1)",
+    //       });
+    //    },
+    //  },
+    //   beforeUnmount() {
+    //     window.removeEventListener("scroll", this.handleScroll);
     //   },
-    // },
-    //  beforeUnmount() {
-    //    window.removeEventListener("scroll", this.handleScroll);
-    //  },
-    //  mounted() {
-    //    window.addEventListener("scroll", this.handleScroll);
-    //  },
-  },
+    //   mounted() {
+    //     window.addEventListener("scroll", this.handleScroll);
+    //   },
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -101,15 +100,17 @@ $prim: #af96c4;
   .p-scrolltop {
     z-index: 10 !important;
     background: linear-gradient(-45deg, #ee76528c, #e73c7e86, #23a5d586, #23d5ab7a);
+    &:hover{
+      background: linear-gradient(-45deg, #ee7652d0, #e73c7eb8, #23a5d5bf, #23d5abb1);
+    }
   }
   .p-scrolltop.p-link {
     left: 1rem;
     @media only screen and (max-width: 600px) {
       max-width: 35px;
       max-height: 35px;
-      
-      opacity: 0.5;
     }
   }
 }
+ 
 </style>

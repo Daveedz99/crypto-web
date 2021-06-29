@@ -9,9 +9,11 @@
         ></path>
       </svg>
     </div>
-    <div class="p-grid">
+    <div class="p-grid image-container">
       <div class="p-col-12">
-        <img src="https://fakeimg.pl/350x200/?text=MUSA&font=lobster" />
+        <div class="parallax"></div>
+      </div>
+      <div class="p-col-12">
         <Autotyper />
       </div>
       <div class="p-col-12">
@@ -25,15 +27,15 @@
 <script>
 import ButtonSpecial2 from "../integrations/ButtonSpecial2.vue";
 import Autotyper from "../integrations/Autotyper.vue";
+
 export default {
   data() {
     return {};
   },
   components: {
     Autotyper,
-    ButtonSpecial2,
-  },
-  methods: {},
+    ButtonSpecial2
+  }
 };
 </script>
 
@@ -41,8 +43,24 @@ export default {
 #slogan {
   min-height: 100vh;
   svg {
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 600px) {
       height: 20vh;
+    }
+  }
+  .image-container {
+    position: relative;
+    z-index: 90;
+    .parallax {
+      margin: 2rem;
+      /* The image used */
+      background-image: url("https://fakeimg.pl/350x200/?text=MUSA&font=lobster");
+      /* Set a specific height */
+      min-height: 500px;
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
   }
 }

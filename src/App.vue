@@ -14,9 +14,6 @@
       <div id="main">
         <Home />
       </div>
-      <div id="footer">
-        <Footer />
-      </div>
     </div>
   </div>
 </template>
@@ -24,7 +21,6 @@
 <script>
 import Header from "./components/Header.vue";
 import Home from "./pages/Home.vue";
-import Footer from "./components/Footer.vue";
 import { BreedingRhombusSpinner } from "epic-spinners";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -32,14 +28,13 @@ export default {
   name: "App",
   data() {
     return {
-      fakeLoading: false,
+      fakeLoading: false
     };
   },
   components: {
     Header,
     Home,
-    Footer,
-    BreedingRhombusSpinner,
+    BreedingRhombusSpinner
   },
   methods: {
     isMobile() {
@@ -48,7 +43,7 @@ export default {
       } else {
         return false;
       }
-    },
+    }
   },
   created() {
     AOS.init();
@@ -58,7 +53,7 @@ export default {
         this.fakeLoading = false;
       }, 3000);
     }
-  },
+  }
 };
 </script>
 

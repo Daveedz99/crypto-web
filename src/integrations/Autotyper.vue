@@ -69,6 +69,10 @@ export default {
 .typer-text {
   color: #0000;
   font-weight: bold;
+  font-size: 2.5rem;
+  @media only screen and (max-width: 800px)  {
+    font-size: 1rem;
+  }
   span.typed-text {
     color: #8854b4;
   }
@@ -76,7 +80,7 @@ export default {
     display: inline-block;
     margin-left: 3px;
     width: 4px;
-    background-color: darken(#8854b4, 40);
+    background-color: darken(#8854b4, 20);
     animation: cursorBlink 1s infinite;
   }
   span.cursor.typing {
@@ -85,7 +89,7 @@ export default {
 }
 @keyframes cursorBlink {
   49% {
-    background-color: darken(#8854b4, 40);
+    background-color: darken(#8854b4, 20);
   }
   50% {
     background-color: transparent;
