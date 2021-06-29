@@ -13,7 +13,7 @@
     ></iframe> 
     </div>-->
     <div id="our-project" class="section our-project">
-    <OurProject />
+      <OurProject />
     </div>
     <div class="section">
       <Roadmap />
@@ -61,7 +61,7 @@ export default {
     HowToBuy,
     Social,
     Developers,
-    OurProject
+    OurProject,
   },
   methods: {
     //PARALLAX EFFECT DA RIVEDERE for each section
@@ -100,15 +100,37 @@ $prim: #af96c4;
   }
   .p-scrolltop {
     z-index: 10 !important;
-    background: linear-gradient(-45deg, #ee76528c, #e73c7e86, #23a5d586, #23d5ab7a);
+    background: linear-gradient(
+      -45deg,
+      #ee7652be,
+      #e73c7ec2,
+      #23a5d5bd,
+      #23d5abc7
+    );
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+
+    @keyframes gradient {
+      0% {
+        transition: all 0.4s ease-in-out;
+
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
   }
   .p-scrolltop.p-link {
     left: 1rem;
     @media only screen and (max-width: 600px) {
       max-width: 35px;
       max-height: 35px;
-      
-      opacity: 0.5;
+
+      opacity: 0.8;
     }
   }
 }

@@ -80,18 +80,18 @@ a:active {
   visibility: hidden;
 }
 .outer-menu {
-  position: absolute;
-  top: 10%;
-  right: 15%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
 .outer-menu .checkbox-toggle {
-  position: absolute;
-  top: 9px;
-  left: -23px;
+  position: relative;
+  bottom: 7px;
+  right: -10px;
   z-index: 2;
   cursor: pointer;
-  width: 49px;
-  height: 49px;
+  // width: 49px;
+  // height: 49px;
   opacity: 0;
 }
 .outer-menu .checkbox-toggle:checked + .hamburger > div {
@@ -122,12 +122,12 @@ a:active {
   transform: rotate(225deg);
 }
 .outer-menu .hamburger {
-  position: absolute;
-  top: 9px;
-  left: -19px;
+  position: relative;
+  // bottom: 7px;
+  // right: -10px;
   z-index: 1;
   width: 49px;
-  height: 49px;
+  // height: 49px;
   padding: 0.4em 0.6em;
   border-radius: 0 0.12em 0.12em 0;
   cursor: pointer;
