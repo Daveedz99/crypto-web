@@ -1,12 +1,17 @@
 <template>
-  <div class="full-y" :class="fakeLoading ? 'bg-darkfull' : 'bg-light'">
-    <BreedingRhombusSpinner
-      id="spinner"
-      :animation-duration="1500"
-      :size="64"
-      color="#b193c9"
-      v-if="fakeLoading"
-    />
+    <transition leave-active-class="animate__animated animate__slideOutDown">
+      <div
+        class="full-y bg-darkfull animate__animated animate__slideInUp"
+        v-if="fakeLoading"
+      >
+        <BreedingRhombusSpinner
+          id="spinner"
+          :animation-duration="1500"
+          :size="64"
+          color="#b193c9"
+        />
+      </div>
+    </transition>
     <div v-if="!fakeLoading">
       <div id="header">
         <Header />
@@ -15,7 +20,6 @@
         <Home />
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -28,13 +32,13 @@ export default {
   name: "App",
   data() {
     return {
-      fakeLoading: false
+      fakeLoading: false,
     };
   },
   components: {
     Header,
     Home,
-    BreedingRhombusSpinner
+    BreedingRhombusSpinner,
   },
   methods: {
     isMobile() {
@@ -43,7 +47,7 @@ export default {
       } else {
         return false;
       }
-    }
+    },
   },
   created() {
     AOS.init();
@@ -51,9 +55,9 @@ export default {
       this.fakeLoading = true;
       setTimeout(() => {
         this.fakeLoading = false;
-      }, 3000);
+      }, 4000);
     }
-  }
+  },
 };
 </script>
 

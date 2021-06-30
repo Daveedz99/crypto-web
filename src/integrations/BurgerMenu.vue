@@ -184,7 +184,6 @@ a:active {
   width: 200vw;
   height: 200vw;
   color: #fefefe;
-  background: $bg-primary;
   border-radius: 50%;
   transition: all 0.4s ease;
   flex: none;
@@ -195,6 +194,23 @@ a:active {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+
+  @keyframes gradient {
+    0% {
+      transition: all 0.4s ease-in-out;
+
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 }
 .outer-menu .menu > div > div {
   text-align: center;
