@@ -1,5 +1,5 @@
 <template>
-  <div class="p-grid p-mt-0 p-py-5">
+  <div class="p-grid p-mt-0 p-py-5 index">
     <div
       class="p-col-10 p-offset-1 p-md-6 p-md-offset-3 p-lg-4 p-lg-offset-4 tokenbox p-ripple"
       v-ripple
@@ -48,7 +48,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "@/assets/scss/variables.scss";
-
+.index {
+  position: relative;
+  z-index: 100;
+}
 .tokenbox {
   color: $text-primary;
   padding: 1rem;

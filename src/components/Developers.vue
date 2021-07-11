@@ -26,9 +26,13 @@
       </div>
     </div>
   </div>
+  <div id="footer">
+    <Footer />
+  </div>
 </template>
 
 <script>
+import Footer from "./Footer"
 export default {
   name: "Developers",
   data() {
@@ -51,6 +55,9 @@ export default {
       ],
     };
   },
+  components: {
+    Footer
+  }
 };
 </script>
 
