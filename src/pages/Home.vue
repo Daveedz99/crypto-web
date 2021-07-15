@@ -13,7 +13,7 @@
     ></iframe> 
     </div>-->
     <div id="our-project" class="section our-project">
-    <OurProject />
+      <OurProject />
     </div>
     <div class="section">
       <Roadmap />
@@ -60,7 +60,7 @@ export default {
     HowToBuy,
     Social,
     Developers,
-    OurProject
+    OurProject,
   },
   methods: {
     // //PARALLAX EFFECT DA RIVEDERE for each section

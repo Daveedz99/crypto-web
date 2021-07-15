@@ -1,7 +1,7 @@
 <template>
-    <transition leave-active-class="animate__animated animate__slideOutDown">
+    <transition appear="animate__animated animate__slideInUp" appear-active-class="animate__animated animate__slideInUp" leave-active-class="animate__animated animate__slideOutDown">
       <div
-        class="full-y bg-darkfull animate__animated animate__slideInUp"
+        class="full-y bg-darkfull"
         v-if="fakeLoading"
       >
         <BreedingRhombusSpinner
