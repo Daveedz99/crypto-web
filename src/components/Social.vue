@@ -23,15 +23,15 @@ export default {
   name: "Social",
   data() {
     return {
-      transaprentize: false,
+      transparentize: false,
     };
   },
   methods: {
     handleScroll() {
       if (window.scrollY >= 5000) {
-        this.transaprentize = true;
+        this.transparentize = true;
       } else {
-        this.transaprentize = false;
+        this.transparentize = false;
       }
     },
   },
@@ -55,7 +55,7 @@ export default {
   padding: 1rem;
   gap: 1rem;
   z-index: 90;
-  top: 45%;
+  top: 45vh;
   right: 0;
   position: fixed;
   // background-color: $primary-transparent;
