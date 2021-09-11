@@ -85,13 +85,13 @@ a:active {
  align-items: center;
 }
 .outer-menu .checkbox-toggle {
-  position: relative;
-  bottom: 7px;
-  right: -10px;
+  position: absolute;
+  bottom: 30px;
+  right: 22px;
   z-index: 2;
   cursor: pointer;
-  // width: 49px;
-  // height: 49px;
+  width: 49px;
+  height: 49px;
   opacity: 0;
 }
 .outer-menu .checkbox-toggle:checked + .hamburger > div {
@@ -122,12 +122,12 @@ a:active {
   transform: rotate(225deg);
 }
 .outer-menu .hamburger {
-  position: relative;
-  // bottom: 7px;
-  // right: -10px;
+  position: absolute;
+  bottom: 26px;
+  right: 35px;
   z-index: 1;
   width: 49px;
-  // height: 49px;
+  height: 49px;
   padding: 0.4em 0.6em;
   border-radius: 0 0.12em 0.12em 0;
   cursor: pointer;
