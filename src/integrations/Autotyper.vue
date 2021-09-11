@@ -1,6 +1,6 @@
 <template>
   <h3 class="typer-text">
-    <span class="typed-text">{{ typer.value }}</span>
+    <span class="typed-text">{{ typer.value }}</span> 
     <span class="cursor" :class="{ typing: typer.status }">&nbsp;</span>
   </h3>
 </template>

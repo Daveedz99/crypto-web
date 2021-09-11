@@ -66,6 +66,7 @@ export default {
 @import "@/assets/scss/variables.scss";
 .navbar {
   margin: 0;
+  z-index: 200;
   color: whitesmoke;
   transition: all 0.4s ease-in-out;
   background: transparent;
@@ -97,8 +98,7 @@ export default {
 }
 .colored {
   // background: #ad8ec7;
-  box-shadow: 0 11px 14px -7px rgba(0, 0, 0, 0.2),
-    0 23px 36px 3px rgba(0, 0, 0, 0.14), 0 9px 44px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 3px -2px rgba(0,0,0,.2),0 3px 4px 0 rgba(0,0,0,.14),0 1px 8px 0 rgba(0,0,0,.12);
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
