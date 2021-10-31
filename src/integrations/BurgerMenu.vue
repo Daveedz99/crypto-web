@@ -1,5 +1,5 @@
 <template>
-  <div class="outer-menu p-d-md-none">
+  <div class="outer-menu md:hidden">
     <input class="checkbox-toggle" type="checkbox" v-model="opened" />
     <div class="hamburger">
       <div></div>
@@ -21,16 +21,16 @@
               <a href="#">Chi siamo</a>
             </li>
             <li>
-              <div class="p-grid p-d-flex p-jc-between">
-                <div class="social p-d-flex">
+              <div class="grid flex justify-content-between">
+                <div class="social flex">
                   <i class="fab fa-telegram">
                     <span class="whitespace"></span>
                   </i>
-                  <i class="fab p-mx-2 fa-facebook"></i>
+                  <i class="fab mx-2 fa-facebook"></i>
                   <span class="insta">
                     <i class="fab fa-instagram"></i>
                   </span>
-                  <i class="fab p-ml-2 fa-twitter"></i>
+                  <i class="fab ml-2 fa-twitter"></i>
                 </div>
               </div>
             </li>
@@ -46,7 +46,7 @@ export default {
   name: "BurgerMenu",
   data() {
     return {
-      opened: false,
+      opened: false
     };
   },
   watch: {
@@ -56,13 +56,13 @@ export default {
       } else {
         document.body.classList.add("overflow");
       }
-    },
+    }
   },
   methods: {
     doCloseBurger() {
       this.opened = false;
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -80,9 +80,9 @@ a:active {
   visibility: hidden;
 }
 .outer-menu {
- display: flex;
- justify-content: center;
- align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .outer-menu .checkbox-toggle {
   position: absolute;

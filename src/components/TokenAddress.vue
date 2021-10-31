@@ -1,7 +1,7 @@
 <template>
-  <div class="p-grid p-mt-0 p-py-5 index">
+  <div class="grid mt-0 mb-5 index animate__animated animate__bounceIn">
     <div
-      class="p-col-10 p-offset-1 p-md-6 p-md-offset-3 p-lg-4 p-lg-offset-4 tokenbox p-ripple"
+      class="col-10 col-offset-1 md:col-6 md:col-offset-3 lg:col-2 lg:col-offset-5 tokenbox p-ripple"
       v-ripple
       v-clipboard:copy="token.address"
       v-clipboard:success="doCopyToken"
@@ -24,26 +24,26 @@ export default {
   name: "TokenAddress",
   data() {
     return {
-      cloned: false,
+      cloned: false
     };
   },
   props: {
     token: {
-      type: Object,
-    },
+      type: Object
+    }
   },
   watch: {
     cloned() {
       setTimeout(() => {
         this.cloned = false;
       }, 500);
-    },
+    }
   },
   methods: {
     doCopyToken() {
       this.cloned = true;
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -57,7 +57,7 @@ export default {
   padding: 1rem;
   border-radius: 10px;
   word-wrap: break-word;
-  transition: all 0.3s ease;
+  transition: transform 0.5s, background-position 1s;
   border-radius: 15px;
   background-color: #7d4aa763;
   background-image: url("../assets/imgs/scatter.png");
@@ -66,6 +66,12 @@ export default {
   background-repeat: no-repeat;
   &:hover {
     cursor: pointer;
+    background-position: center center;
+    transform: scale(1.085);
+    .token {
+      transition: .6s color;
+      color: #f7edff;
+    }
   }
   &.token {
     width: fit-content;

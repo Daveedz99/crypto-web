@@ -1,15 +1,16 @@
 <template>
   <div id="howtobuy">
-    <div class="p-grid">
-      <div class="p-col-12">HOW TO BUY</div>
+    
+    <div class="grid">
+      <div class="col-12">HOW TO BUY</div>
     </div>
-    <section class="section p-mt-0" data-aos="fade-up" data-aos-duration="2500">
-      <div class="p-grid">
+    <section class="section mt-0" data-aos="fade-up" data-aos-duration="2500">
+      <div class="grid">
         <div class="step">1</div>
-        <div class="p-col-6 p-d-flex p-ai-center p-jc-center sectionbox">
+        <div class="col-6 flex align-items-center justify-content-center sectionbox">
           <h2>Installa Metamask o Trust Wallet</h2>
         </div>
-        <div class="p-col-6 p-d-flex p-ai-center p-jc-center">
+        <div class="col-6 flex align-items-center justify-content-center">
           <img
             class="img-responsive"
             src="../assets/imgs/pt1.png"
@@ -21,33 +22,33 @@
       </div>
     </section>
     <section class="section" data-aos="fade-left" data-aos-duration="2500">
-      <div class="p-grid">
+      <div class="grid">
         <div class="step">2</div>
-        <div class="p-col-12">
+        <div class="col-12">
           <h2>Configura il tuo Wallet</h2>
         </div>
       </div>
     </section>
     <section class="section" data-aos="fade-right" data-aos-duration="2500">
-      <div class="p-grid">
+      <div class="grid">
         <div class="step">3</div>
-        <div class="p-col-12">
+        <div class="col-12">
           <h2>Acquista dei BNB</h2>
         </div>
       </div>
     </section>
     <section class="section" data-aos="fade-left" data-aos-duration="2500">
-      <div class="p-grid">
+      <div class="grid">
         <div class="step">4</div>
-        <div class="p-col-12 p-m-1">
+        <div class="col-12 m-1">
           <h2>Accedi a Pancakeswap.finance dal browser del tuo Wallet.</h2>
         </div>
       </div>
     </section>
     <section class="section" data-aos="fade-right" data-aos-duration="2500">
-      <div class="p-grid">
+      <div class="grid">
         <div class="step">5</div>
-        <div class="p-col-6 p-d-flex p-ai-center p-jc-center">
+        <div class="col-6 flex align-items-center justify-content-center">
           <img
             class="img-responsive"
             @click="toggleDialog('pt2.png', 'Wallet')"
@@ -66,12 +67,12 @@
       </div>
     </section>
     <section class="section" data-aos="fade-left" data-aos-duration="2500">
-      <div class="p-grid">
+      <div class="grid">
         <div class="step">6</div>
-        <div class="p-col-6 p-d-flex p-ai-center p-jc-center">
+        <div class="col-6 flex align-items-center justify-content-center">
           <h2>Dalle impostazioni, Imposta lo slippage a 12.</h2>
         </div>
-        <div class="p-col-6 p-d-flex p-ai-center p-jc-center">
+        <div class="col-6 flex align-items-center justify-content-center">
           <img
             @click="toggleDialog('slippage.png', 'Slippage')"
             class="img-responsive"
@@ -83,9 +84,9 @@
       </div>
     </section>
     <section class="section" data-aos="fade-right" data-aos-duration="2500">
-      <div class="p-grid">
+      <div class="grid">
         <div class="step">7</div>
-        <div class="p-col-12 p-m-1">
+        <div class="col-12 m-1">
           <h2>
             Fai lo swap dai BNB appena acquistati a MUSA, importando l’address
             del token su Pancakeswap. Token Address: 0x83testdf1a
@@ -94,9 +95,9 @@
       </div>
     </section>
     <section class="section" data-aos="fade-left" data-aos-duration="2500">
-      <div class="p-grid">
+      <div class="grid">
         <div class="step">8</div>
-        <div class="p-col-12 p-m-1">
+        <div class="col-12 m-1">
           <h2>
             Controlla che le monete siano state accreditate sul tuo Wallet
           </h2>
@@ -104,23 +105,23 @@
       </div>
     </section>
     <section class="section" data-aos="zoom-in" data-aos-duration="2500">
-      <div class="p-grid">
+      <div class="grid">
         <div class="step final">
           <i class="fad fa-2x fa-check-double"></i>
         </div>
-        <div class="p-col-12 p-d-flex p-jc-center p-m-1">
-          <h2 class="p-d-flex p-ai-center">
+        <div class="col-12 flex justify-content-center m-1">
+          <h2 class="flex align-items-center">
             E' ora di guardare i tuoi guadagni direttamente su
           </h2>
         </div>
-        <div class="p-m-auto">
+        <div class="m-auto">
           <Button
             icon="fas fa-poo"
             class="p-button-help p-button-text p-button-sm text-success"
             label="Poocoin.com"
           />
         </div>
-        <div class="p-col-12">
+        <div class="col-12">
           <img
             @click="toggleDialog('pt3.png', 'Poocoin')"
             src="@/assets/imgs/pt3.png"
@@ -183,18 +184,18 @@ export default {
 #howtobuy {
   padding-top: 70px;
   padding-bottom: 70px;
-  background-image: linear-gradient(
-    to bottom,
-    #8854b4 0%,
-    #9269b4 12%,
-    #9778b1 25%,
-    #a78dbd 37%,
-    #a798b4 50%,
-    #beb7c5 62%,
-    #cac9d8 75%,
-    #f8f9fa 87%,
-    #f8f9fa 100%
-  );
+  // background-image: linear-gradient(
+  //   to bottom,
+  //   #8854b4 0%,
+  //   #9269b4 12%,
+  //   #9778b1 25%,
+  //   #a78dbd 37%,
+  //   #a798b4 50%,
+  //   #beb7c5 62%,
+  //   #cac9d8 75%,
+  //   #f8f9fa 87%,
+  //   #f8f9fa 100%
+  // );
 
   .section {
     padding: 1rem;

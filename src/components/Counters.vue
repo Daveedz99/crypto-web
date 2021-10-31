@@ -1,12 +1,22 @@
 <template>
   <div id="counters">
-    <TokenAddress id="tokenaddress" :token="token"  />
-    <div class="p-grid p-jc-center p-mx-0 p-my-0">
-      <Card class="counters-card-1 p-col-12 p-lg-3" data-aos="fade-up" data-aos-duration="1500">
+    <TokenAddress id="tokenaddress" :token="token" />
+    <div class="grid nogutter justify-content-center relative my-0 z-1">
+      <Card
+        class="counters-card-1 col-12 lg:col-3"
+        data-aos="fade-right"
+        data-aos-duration="1500"
+        @click="restartCounter('holders')"
+      >
         <template #content>
           <div class="counter">
-            <i class="fas fa-hand-holding-water p-mr-3"></i>
+            <i class="fas fa-hand-holding-water mr-3"></i>
+            <i
+              v-if="isLoading.includes('holders')"
+              class="fad fa-refresh fa-spin"
+            ></i>
             <Autocounter
+              v-else
               ref="counter"
               :startAmount="0"
               :endAmount="counters.holders"
@@ -23,13 +33,20 @@
         </template>
       </Card>
       <Card
-        class="counters-card-2 p-col-12 p-lg-3 p-mx-md-1 p-mx-lg-5 p-my-4 p-my-lg-0"
-        data-aos="fade-up" data-aos-duration="1500"
+        @click="restartCounter('marketCap')"
+        class="counters-card-2 col-12 lg:col-3 md:mx-1 lg:mx-5 my-4  lg:my-0"
+        data-aos="fade-down"
+        data-aos-duration="1500"
       >
         <template #content>
           <div class="counter">
-            <i class="fad fa-shopping-cart p-mr-3"></i>
+            <i class="fad fa-shopping-cart mr-3"></i>
+            <i
+              v-if="isLoading.includes('marketCap')"
+              class="fad fa-refresh fa-spin"
+            ></i>
             <Autocounter
+              v-else
               ref="counter"
               :startAmount="0"
               :endAmount="counters.marketCap"
@@ -45,11 +62,21 @@
           <span class="detail"> MUSA Marketcap </span>
         </template>
       </Card>
-      <Card class="counters-card-3 p-col-12 p-lg-3" data-aos="fade-up" data-aos-duration="1500">
+      <Card
+        @click="restartCounter('pricePer')"
+        class="counters-card-3 col-12 lg:col-3"
+        data-aos="fade-left"
+        data-aos-duration="1500"
+      >
         <template #content>
           <div class="counter">
-            <i class="fad fa-coins p-mr-3"></i>
+            <i class="fad fa-coins mr-3"></i>
+            <i
+              v-if="isLoading.includes('pricePer')"
+              class="fad fa-refresh fa-spin"
+            ></i>
             <Autocounter
+              v-else
               ref="counter"
               :startAmount="0"
               :endAmount="counters.pricePer"
@@ -73,26 +100,35 @@
 import Vue3Autocounter from "vue3-autocounter";
 import TokenAddress from "./TokenAddress.vue";
 
-
 export default {
   name: "Counters",
   data() {
     return {
+      isLoading: [],
       counters: {
         holders: 12,
         marketCap: 1231,
-        pricePer: 0.0012,
-      },
+        pricePer: 0.0012
+      }
     };
   },
   props: {
-    token: Object,
+    token: Object
   },
   components: {
     Autocounter: Vue3Autocounter,
-    TokenAddress,
+    TokenAddress
   },
   methods: {
+    restartCounter(type) {
+      this.isLoading.push(type);
+      let counter = this.counters[type];
+      this.counters[type] = 0;
+      setTimeout(() => {
+        this.isLoading.pop(type);
+        this.counters[type] = counter;
+      }, 800);
+    }
   }
 };
 </script>
@@ -137,6 +173,10 @@ export default {
     }
     .detail {
       font-weight: bolder;
+    }
+    &:hover {
+      transform: scale(1.05);
+      cursor: pointer;
     }
   }
 }

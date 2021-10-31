@@ -82,18 +82,18 @@ export default {
   padding-top: 70px;
   padding-bottom: 70px;
   min-height: 100vh;
-  background-image: linear-gradient(
-    to top,
-    #8854b4 0%,
-    #8854b4 12%,
-    #8854b4 25%,
-    #8f67af 37%,
-    #b398ca 50%,
-    #c7b2da 62%,
-    #e8d8f5 75%,
-    #f8f9fa 87%,
-    #f8f9fa 100%
-  );
+  // background-image: linear-gradient(
+  //   to top,
+  //   #8854b4 0%,
+  //   #8854b4 12%,
+  //   #8854b4 25%,
+  //   #8f67af 37%,
+  //   #b398ca 50%,
+  //   #c7b2da 62%,
+  //   #e8d8f5 75%,
+  //   #f8f9fa 87%,
+  //   #f8f9fa 100%
+  // );
   .custom-marker {
     display: flex;
     width: 2rem;

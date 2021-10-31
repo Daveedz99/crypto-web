@@ -44,14 +44,14 @@ export default {
       number: 0,
       tweenedNumber: 0,
       token: {
-        address: "0x83testdf1a7c56e7test7d321312TEST52e0a2aad0e",
-      },
+        address: "0x83testdf1a7c56e7test7d321312TEST52e0a2aad0e"
+      }
     };
   },
   props: {
     anchor: {
-      type: String,
-    },
+      type: String
+    }
   },
   components: {
     Counters,
@@ -60,7 +60,7 @@ export default {
     HowToBuy,
     Social,
     Developers,
-    OurProject,
+    OurProject
   },
   methods: {
     // //PARALLAX EFFECT DA RIVEDERE for each section
@@ -99,9 +99,27 @@ $prim: #af96c4;
   }
   .p-scrolltop {
     z-index: 10 !important;
-    background: linear-gradient(-45deg, #ee76528c, #e73c7e86, #23a5d586, #23d5ab7a);
-    &:hover{
-      background: linear-gradient(-45deg, #ee7652d0, #e73c7eb8, #23a5d5bf, #23d5abb1);
+    transition: all 1s ease;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    &:hover {
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+  @keyframes gradient {
+    0% {
+      transition: all 0.4s ease-in-out;
+
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
     }
   }
   .p-scrolltop.p-link {
@@ -112,5 +130,4 @@ $prim: #af96c4;
     }
   }
 }
- 
 </style>

@@ -1,12 +1,12 @@
 <template>
   <div class="navbar" :class="colored ? 'colored' : ''">
-    <div class="p-grid p-d-flex p-ai-center p-m-0">
-      <div class="p-col-4 p-lg-6 p-offset-2 sx">
+    <div class="grid">
+      <div class="col-4 lg:col-6 col-offset-2 sx">
         <img class="logo" src="https://fakeimg.pl/70x70/?LOGO&font=lobster" />
         <!-- <img class="img-responsive logo" src="../assets/imgs/logo.png" />  -->
       </div>
-      <div class="p-col-6 p-md-6 p-lg-4">
-        <div class="anchors p-d-none p-d-md-flex p-jc-around">
+      <div class="col-6 lg:col-4 flex align-content-center">
+        <div class="anchors hidden  md:flex justify-content-around w-full align-items-center">
           <div class="anchor" v-scroll-to="'#roadmap'">ROADMAP</div>
           <div class="anchor" v-scroll-to="'#howtobuy'">HOW TO BUY</div>
           <div class="anchor" v-scroll-to="'#our-project'">OUR PROJECT</div>
@@ -67,6 +67,7 @@ export default {
 .navbar {
   margin: 0;
   z-index: 200;
+  margin-top: 1rem;
   color: whitesmoke;
   transition: all 0.4s ease-in-out;
   background: transparent;
@@ -87,7 +88,7 @@ export default {
     background-position: bottom left;
     background-size: 0% 2px;
     background-repeat: no-repeat;
-    transition: background-size 0.7s, background-position 0s 1s;
+    transition: background-size 0.7s, background-position 0s 1s, color 0.6s;
     &:hover {
       cursor: pointer;
       background-position: bottom right;

@@ -1,10 +1,12 @@
 <template>
-  <div class="p-d-flex p-jc-around w-100">
+<div class="wave-container flex">
+    <SvgWawe />
+  <!-- <div class="absolute justify-content-around w-full">
     <div class="social">
       <i class="fab fa-telegram">
         <span class="whitespace"></span>
       </i>
-      <i class="fab p-mx-4 fa-facebook">
+      <i class="fab mx-4 fa-facebook">
         <span class="whitespaceFb"></span>
       </i>
       <span class="insta">
@@ -12,17 +14,22 @@
           <span class="whitespace"></span>
         </i>
       </span>
-      <i class="fab p-ml-4 fa-discord">
+      <i class="fab ml-4 fa-discord">
         <span class="whitespace"></span>
       </i>
     </div>
+      </div> -->
     <!-- <div class="business-mail text-dark">cryptowallet@MUSA.it</div>
     <div class="copyright text-dark">Copyright © 2021 MUSA</div> -->
   </div>
 </template>
 <script>
+import SvgWawe from '@/integrations/Svg.vue'
 export default {
   name: "Footer",
+  components: {
+    SvgWawe
+  },
   data() {
     return {};
   },

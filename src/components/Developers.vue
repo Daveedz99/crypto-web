@@ -1,8 +1,8 @@
 <template>
   <div id="developers">
-    <div class="p-grid p-mx-0 w-100 p-ai-center">
+    <div class="grid nogutter w-full align-items-center">
       <div
-        class="p-col-12 p-md-6 p-lg-6 p-d-flex p-jc-center"
+        class="col-12 md:col-6 flex justify-content-center"
         v-for="dev in devs"
         :key="dev"
       >
@@ -26,13 +26,9 @@
       </div>
     </div>
   </div>
-  <div id="footer">
-    <Footer />
-  </div>
 </template>
 
 <script>
-import Footer from "./Footer"
 export default {
   name: "Developers",
   data() {
@@ -55,9 +51,6 @@ export default {
       ],
     };
   },
-  components: {
-    Footer
-  }
 };
 </script>
 

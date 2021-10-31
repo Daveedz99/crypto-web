@@ -23,7 +23,7 @@ export default {
         },
         fullScreen: {
           enable: true,
-          zIndex: 0,
+          zIndex: -1,
         },
         interactivity: {
           events: {

@@ -1,17 +1,14 @@
 <template>
-  <div
-    class="socialbox animate__animated animate__heartBeat animate__slow"
-    :class="transaprentize ? 'transparentize' : ''"
-  >
-    <div class="social-icon">
+  <div class="socialbox" :class="transaprentize ? 'transparentize' : ''">
+    <div class="social-icon animate_animated animate__bounceIn">
       <i class="fab fa-telegram-plane">
         <span class="whitespace"></span>
       </i>
     </div>
-    <div class="social-icon">
+    <div class="social-icon animate_animated animate__bounceIn">
       <i class="fab fa-instagram"></i>
     </div>
-    <div class="social-icon">
+    <div class="social-icon animate_animated animate__bounceIn">
       <i class="fab fa-discord">
         <span class="whitespace"></span>
       </i>
@@ -23,7 +20,7 @@ export default {
   name: "Social",
   data() {
     return {
-      transparentize: false,
+      transparentize: false
     };
   },
   methods: {
@@ -33,14 +30,14 @@ export default {
       } else {
         this.transparentize = false;
       }
-    },
+    }
   },
   created() {
     window.addEventListener("scroll", this.handleScroll);
   },
   unmounted() {
     window.removeEventListener("scroll", this.handleScroll);
-  },
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -61,7 +58,7 @@ export default {
   // background-color: $primary-transparent;
   border-radius: 5px 0px 0px 5px;
   transition: all 1s ease;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #ee7752, #e73c7ec5, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 
