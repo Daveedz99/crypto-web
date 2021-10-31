@@ -21,7 +21,7 @@
 <script>
 import ButtonSpecial2 from "../integrations/ButtonSpecial2.vue";
 import Autotyper from "../integrations/Autotyper.vue";
-import SvgWawe from "../integrations/svgWawe"
+import SvgWawe from "../integrations/SvgWawe"
 export default {
   data() {
     return {};
