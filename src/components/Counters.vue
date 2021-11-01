@@ -177,6 +177,9 @@ export default {
     &:hover {
       transform: scale(1.05);
       cursor: pointer;
+      @media screen and (max-width: 994px){
+        transform: scale(0.9);
+      }
     }
   }
 }

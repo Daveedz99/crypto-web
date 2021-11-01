@@ -1,8 +1,8 @@
 <template>
   <div id="developers">
-    <div class="grid nogutter w-full align-items-center">
+    <div class="grid grid-nogutter w-full align-items-center">
       <div
-        class="col-12 md:col-6 flex justify-content-center"
+        class="col-12 md:col-6 mt-2 flex justify-content-center"
         v-for="dev in devs"
         :key="dev"
       >

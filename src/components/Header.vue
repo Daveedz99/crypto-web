@@ -71,6 +71,7 @@ export default {
   color: whitesmoke;
   transition: all 0.4s ease-in-out;
   background: transparent;
+  position: relative;
   border-radius: 17px;
   .logo {
     margin-top: 0.5rem;
