@@ -121,13 +121,15 @@ export default {
   },
   methods: {
     restartCounter(type) {
-      this.isLoading.push(type);
-      let counter = this.counters[type];
-      this.counters[type] = 0;
-      setTimeout(() => {
-        this.isLoading.pop(type);
-        this.counters[type] = counter;
-      }, 800);
+      if (this.counters[type]) {
+        this.isLoading.push(type);
+        let counter = this.counters[type];
+        this.counters[type] = 0;
+        setTimeout(() => {
+          this.isLoading.pop(type);
+          this.counters[type] = counter;
+        }, 800);
+      }
     }
   }
 };
@@ -177,7 +179,7 @@ export default {
     &:hover {
       transform: scale(1.05);
       cursor: pointer;
-      @media screen and (max-width: 994px){
+      @media screen and (max-width: 994px) {
         transform: scale(0.9);
       }
     }

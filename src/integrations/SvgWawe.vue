@@ -78,42 +78,35 @@ export default {
 <style lang="scss">
 .wawe1 {
   transition: 0.4s all;
-  // animation: mare linear 3s infinite;
+  animation: wawe linear 9s infinite;
 }
-@keyframes mare {
+.wawe2 {
+  animation: wawe linear 15s infinite;
+}
+
+@keyframes wawe {
   100%,
   0% {
-    transform: translateY(25%);
+    transform: scale(1.5);
   }
+  90%,
   10% {
-    transform: translateY(20%);
+    transform: scale(1.6);
   }
+  80%,
   20% {
-    transform: translateY(17%);
+    transform: scale(1.7);
   }
+  70%,
   30% {
-    transform: translateY(15%);
+    transform: scale(1.8);
   }
+  60%,
   40% {
-    transform: translateY(13%);
+    transform: scale(1.9);
   }
   50% {
-    transform: translateY(10%);
-  }
-  60% {
-    transform: translateY(8%);
-  }
-  70% {
-    transform: translateY(5%);
-  }
-  80% {
-    transform: translateY(10%);
-  }
-  90% {
-    transform: translateY(20%);
-  }
-  100% {
-    transform: translateY(30%);
+    transform: scale(2);
   }
 }
 </style>
